@@ -1,0 +1,339 @@
+@import "fonts";
+@import url('/misterbyt/css/conts.css');
+@import "mixins";
+@import "variables";
+
+nav {
+  padding: 20px 0;
+  .nav__wrapper {
+    @include flex;
+  }
+  .nav__logo {
+    img {
+      @include image-dimensions(120px, 35px);
+    }
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+  .burger, .close {
+    display: none;
+  }
+  .nav__menu {
+    ul {
+      @include flex;
+      gap:40px;
+      a {
+        @include font;
+      }
+    }
+    .nav__info_mobile{
+      display: none;
+    p{
+      @include font;
+    }
+    }
+    .nav__tel_mobile {
+      display: none;
+      a {
+        @include font ($fontSize:22px, $fontW:900,$fontF:'gilroy');
+        span {
+          color: #FED036;
+        }
+      }
+    }
+  }
+  input[type="checkbox"]:checked ~ .nav__sidebar {
+    right: 0;
+  }
+  .nav__info{
+    @include flex ;
+    p{
+      @include font;
+    }
+  }
+  .nav__tel {
+    a {
+      @include font ($fontSize:28px, $fontW:900,$fontF:'gilroy');
+      span {
+        color: #FED036;
+      }
+    }
+  }
+}
+
+footer {
+  background: $textColor;
+  padding: 33px 0 20px 0;
+  width: 100%;
+  position: relative;
+  .footer__tel {
+    text-align: center;
+    a{
+      @include font ($color: #fff, $fontSize:24px, $fontW:900,$fontF:'gilroy');
+      span {
+        @include font ($color: #FED036, $fontSize:36px,$fontW:900 ,$fontF:'gilroy');
+      }
+    }
+  }
+  .footer__info {
+    @include flex ($justify: center,);
+    gap: 5px;
+    margin-top: 11px;
+    a {
+      @include font ($color:#FED036, $fontSize:14px, $fontW:400, $fontF:'Proxima Nova');
+      text-decoration: underline;
+    }
+  }
+  .footer__inn {
+    @include font ($color:#fff, $fontSize:14px, $fontW:400, $fontF:'Proxima Nova');
+    text-align: center;
+    margin-top: 15px;
+  }
+  .footer__link {
+      text-align: center;
+      margin-top: 15px;
+      a{
+        @include font ($color:#FED036, $fontSize:14px, $fontW:400, $fontF:'Proxima Nova');
+        text-decoration: underline;
+      }
+  }
+  .footer__text {
+    @include font ($color:#fff, $fontSize:14px, $fontW:400, $fontF:'Proxima Nova');
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .footer__end {
+    @include font ($color:#edf3f6af, $fontSize:9px, $fontW:400, $fontF:'Proxima Nova');
+    text-align: center;
+    width: 582px;
+    margin: auto;
+  }
+  .footet__topBtn{
+    position: absolute;
+    @include flex;
+    gap: 5px;
+    padding: 9px 13px;
+    background: #3C93F0;
+    border-radius: 3px;
+    top: -15px;
+    left: 47%;
+    a{
+      @include font ($color:#fff, $fontSize:14px, $fontW:600, $fontF:'Proxima Nova');
+    }
+  }
+}
+
+// media
+
+
+
+/* ==============1280=================== */
+
+@media only screen and (max-width: 1280px) {
+
+
+  nav {
+    .nav__menu {
+      ul {
+        gap:20px;
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+    .nav__info{
+      p{
+       font-size: 12px;
+      }
+    }
+  }
+
+}
+/* ==============1024=================== */
+
+@media only screen and (max-width: 1024px) {
+  
+  nav {
+    padding: 10px 0;
+    .nav__logo {
+      img {
+        width: 120px;
+        height: 35px;
+      }
+    }
+    .burger {
+      display: block;
+      i {
+        font-size: 40px;
+        color: #3C93F0;
+      }
+    }
+    .close {
+      @include flex($justify:flex-end);
+      width: 100%;
+      margin-bottom: 40px;
+
+      i {
+        font-size: 35px;
+        color: #3C93F0;
+      }
+    }
+    .nav__menu {
+      ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        gap: 40px;
+        margin-left: 0;
+        a {
+          font-size: 18px;
+        }
+      }
+    }
+    .nav__sidebar {
+      position: fixed;
+      bottom: 0;
+      right: -100%;
+      background-color: #fff;
+      width: 300px;
+      height: 100vh;
+      flex-direction: column;
+      padding: 30px 40px;
+      transition: all 0.5s ease;
+      z-index: 1;
+    }
+    .nav__info{
+      p{
+       font-size: 18px;
+      }
+    }
+    .nav__tel {
+      a {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+/* ==============768=================== */
+
+@media only screen and (max-width: 768px) {
+  
+  nav {
+    .nav__logo {
+      img {
+        @include image-dimensions(84px, 25px);
+      }
+    }
+    .burger {
+      i {
+        font-size: 25px;
+      }
+    }
+    .nav__menu {
+      .nav__info_mobile {
+        display: block;
+        margin-top: 30px;
+        text-align: center;
+      }
+      .nav__tel_mobile {
+        display: block;
+        text-align: center;
+        margin-bottom: 25px;
+      }
+    }
+    .nav__sidebar {
+      padding: 20px 40px;
+    }
+    .nav__info{
+      display: none;
+    }
+    .nav__tel {
+      display: none;
+    }
+  }
+  footer {
+    .footer__tel {
+      a{
+        @include font ($color: #fff, $fontSize:20px, $fontW:900,$fontF:'gilroy');
+        span {
+          @include font ($color: #FED036, $fontSize:28px,$fontW:900);
+        }
+      }
+    }
+    .footer__info {
+      a {
+        @include font ($color:#FED036, $fontSize:10px, $fontW:400, $fontF:'Proxima Nova');
+      }
+    }
+    .footer__inn {
+      @include font ($color:#fff, $fontSize:10px, $fontW:400, $fontF:'Proxima Nova');
+    }
+    .footer__link {
+        a{
+          @include font ($color:#FED036, $fontSize:10px, $fontW:400, $fontF:'Proxima Nova');
+        }
+    }
+    .footer__text {
+      @include font ($color:#fff, $fontSize:10px, $fontW:400, $fontF:'Proxima Nova');
+    }
+    .footer__end {
+      @include font ($color:#edf3f6af, $fontSize:8px, $fontW:400, $fontF:'Proxima Nova');
+      width: 100%;
+    }
+    .footet__topBtn {
+      left: 45%;
+      a {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+/* ==============640=================== */
+
+@media only screen and (max-width: 640px) {
+}
+
+/* ==============450=================== */
+
+@media only screen and (max-width: 450px) {
+  nav {
+    .nav__logo {
+      img {
+        @include image-dimensions(80px, 21px);
+      }
+    }
+    .burger {
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+  footer {
+    .footer__tel {
+      a{
+        @include font ($color: #fff, $fontSize:28px, $fontW:900,$fontF:'gilroy');
+        span {
+          @include font ($color: #FED036, $fontSize:28px,$fontW:900);
+        }
+      }
+    }
+    .footer__info {
+      a {
+        @include font ($color:#FED036, $fontSize:12px, $fontW:400, $fontF:'Proxima Nova');
+      }
+    }
+    .footet__topBtn {
+      left: 39%;
+      gap: 20px;
+      padding: 4px 13px;
+      top: -10px;
+      a {
+        font-size: 10px;
+      }
+    }
+  }
+}

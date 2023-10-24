@@ -1,0 +1,83 @@
+$textColor:#3E3E3E;
+$bgColor:#FED036;
+$btnColor:#3C93F0;
+.title {
+  @include flex($direction: column, $align: center,$isGap:true,$gap:20px) ;
+  h1{
+    @include font($fontSize:48px, $fontW:900, $fontF:'gilroy');
+  }
+  p {
+    @include font($fontSize:24px, $fontW:400, $fontF:'Proxima_Nova');
+    text-align: center;
+  }
+  i {
+    @include font($color:#3E3E3E33, $fontSize:40px, $fontW:900,);
+  }
+}
+
+@media only  screen and (max-width: 1536px){
+  .title {
+    @include flex($direction: column, $align: center,$isGap:true,$gap:20px) ;
+    h1{
+      @include font($fontSize:48px, $fontW:900, $fontF:'gilroy');
+    }
+    p {
+      @include font($fontSize:24px, $fontW:400, $fontF:'Proxima_Nova');
+      text-align: center;
+    }
+    i {
+      @include font($color:#3E3E3E33, $fontSize:40px, $fontW:900,);
+    }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+}
+
+@media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    h1{
+      @include font($fontSize:38px,);
+    }
+    p {
+      @include font($fontSize:14px, $fontW:400, $fontF:'Proxima_Nova');
+      text-align: center;
+    }
+    i {
+      @include font($color:#3E3E3E33, $fontSize:30px, $fontW:900,);
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .title {
+    h1{
+      @include font($fontSize:24px, $fontW:900, $fontF:'gilroy');
+    }
+    p {
+      @include font($fontSize:12px, $fontW:400, $fontF:'Proxima_Nova');
+      text-align: center;
+    }
+    i {
+      @include font($color:#3E3E3E33, $fontSize:40px, $fontW:900,);
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .title {
+    h1{
+      @include font($fontSize:20px, $fontW:900, $fontF:'gilroy');
+    }
+    p {
+      @include font($fontSize:12px, $fontW:400, $fontF:'Proxima_Nova');
+      text-align: center;
+    }
+    i {
+      @include font($color:#3E3E3E33, $fontSize:20px, $fontW:900,);
+    }
+  }
+}

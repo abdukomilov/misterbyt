@@ -1,0 +1,79 @@
+@import '/css/fonts.css';
+@mixin font ($color:#3E3E3E, $fontSize:18px, $fontW:400, $fontF:'Proxima_Nova') {
+  color: $color;
+  font-weight: $fontW;
+  font-size: $fontSize;
+  font-family: $fontF;
+}
+
+@mixin btn ($btnColor:#F1F5F9, $fontW:500, $peddBnt:14px 28px 14px 28px, $bg:#3C93F0, $border:1px solid #F1F5F9, $fontSize:20px,$fontF:'Proxima Nova' ) {
+  color: $btnColor;
+  font-weight: $fontW;
+  font-size: $fontSize;
+  font-family: Montserrat;
+  padding: $peddBnt;
+  background-color: $bg;
+  border: $border;
+  border-radius: 4px;
+  font-family: $fontF;
+}
+
+@mixin flex($direction: row, $justify: space-between, $align: center,$isGap:false,$gap:20px) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  @if $isGap{
+    gap: $gap;
+  }
+}
+
+@mixin grid($columns: auto, $rows: auto, $gap: 20px) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-template-rows: repeat($rows, 1fr);
+  grid-gap: $gap;
+}
+
+@mixin padding($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  padding: $top $right $bottom $left;
+}
+
+@mixin grid-column($startCS:1,$startCE:3, $startRS:1,$startRE:2) {
+  grid-column: $startCS /span $startCE;
+  grid-row: $startRS / span $startRE;
+}
+
+@mixin border($width: 1px, $style: solid, $color: #000) {
+  border: $width $style $color;
+}
+
+@mixin border-radius($radius: 4px) {
+  border-radius: $radius;
+}
+
+@mixin position($value: relative) {
+  position: $value;
+  // top: $valueT;
+  // right: $valueR;
+  // bottom: $valueB;
+  // left: $valueL;
+}
+
+@mixin image-dimensions($width: 0, $height: 0, $fit:cover) {
+  width: $width;
+  height: $height;
+  object-fit: $fit;
+}
+
+@mixin iframe($iframeW:0 , $iframeH:0) {
+  width: $iframeW;
+  height: $iframeH;
+}
+
+@mixin rtl($property, $ltr-value, $rtl-value) {
+  #{$property}: $ltr-value;
+  [dir=rtl] & {
+    #{$property}: $rtl-value;
+  }
+}
