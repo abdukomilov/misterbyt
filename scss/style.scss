@@ -1,0 +1,1644 @@
+@import "fonts";
+@import url('/misterbyt/css/conts.css');
+@import "mixins";
+@import "variables";
+
+nav {
+  padding: 20px 0;
+  .nav__wrapper {
+    @include flex;
+  }
+  .nav__logo {
+    img {
+      @include image-dimensions(120px, 35px);
+    }
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+  .burger, .close {
+    display: none;
+  }
+  .nav__menu {
+    ul {
+      @include flex;
+      gap:40px;
+      a {
+        @include font;
+      }
+    }
+    .nav__info_mobile{
+      display: none;
+    p{
+      @include font;
+    }
+    }
+    .nav__tel_mobile {
+      display: none;
+      a {
+        @include font ($fontSize:22px, $fontW:900,$fontF:'gilroy');
+        span {
+          color: #FED036;
+        }
+      }
+    }
+  }
+  input[type="checkbox"]:checked ~ .nav__sidebar {
+    right: 0;
+  }
+  .nav__info{
+    @include flex ;
+    p{
+      @include font;
+    }
+  }
+  .nav__tel {
+    a {
+      @include font ($fontSize:28px, $fontW:900,$fontF:'gilroy');
+      span {
+        color: #FED036;
+      }
+    }
+  }
+}
+
+.banner {
+  position: relative;
+  padding-top: 30px;
+  background:$bgColor;
+  .banner__wrapper {
+    @include flex;
+  }
+  .banner__box {
+    @include flex ($direction: column, $align: start);
+    gap: 30px;
+    h2{
+      @include font ($fontSize:30px, $fontW:600,$fontF:'Proxima Nova');
+    }
+    h1{
+      @include font ($color:#fff, $fontSize:60px, $fontW:900,$fontF:'gilroy');
+    }
+    .banner__order{
+      @include flex($justify: start,);
+      gap: 10px;
+      p {
+        @include font ($fontSize:24px, $fontW:400,$fontF:'Proxima Nova');
+      }
+    }
+  }
+  .banner__img {
+    img {
+      @include image-dimensions(100%, 100%, contain);
+    }
+  }
+  .banner__button{
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    @include flex($justify:center,$align:end);
+    transform: translate(-50%);
+    .btn{
+        @include flex($justify:center,);
+        gap: 10px;
+        @include btn(#fff,600,16px 26px 15px 19px,#3C93F0,none,18px);
+        border-radius: 3px 0 0 3px;
+        flex-shrink: 0;
+        display: none;
+        svg {
+          margin-right: 10px;
+        }
+    }
+    .banner__btn{
+        @include flex($justify:center);
+        gap: 10px;
+        @include btn(#fff,600,16px 31px 15px 19px,#09D743,none,18px);
+        border-radius: 0 3px 3px 0;
+        flex-shrink: 0;
+        display: none;
+        svg {
+          margin-right: 10px;
+        }
+    }
+}
+  .banner__titlemobile{
+    display: none;
+    @include font ($color:#fff, $fontSize:60px, $fontW:900,$fontF:'gilroy');
+  }
+  .banner__text {
+    display: none;
+    @include font ($fontSize:30px, $fontW:600,$fontF:'Proxima Nova');
+  }
+  .banner__form{
+    @include flex;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 0 0 0 20px;
+    input[type="number"]{
+        outline: none;
+        border: 0;
+        padding: 17px 0;
+    }
+    input[type="submit"]{
+        outline: none;
+        border: 0;
+        background-color:#3C93F0;
+        padding: 17px 23px 16px 21px;
+        border-radius: 3px;
+        @include font(#fff,24px,500,'gilroy');
+    }
+    .banner__flag{
+        @include flex;
+        margin-right: 10px;
+    }
+}
+  .banner__rotate {
+    @include flex( $align: center);
+    position: absolute;
+    left: -73px;
+    top: 300px;
+    transform: rotate(90deg);
+    background: #3C93F0;
+    padding: 10px;
+    border-radius: 5px;
+    svg {
+      transform: rotate(-90deg);
+    }
+    p {
+      @include font($color:#fff, $fontSize:12px, $fontW:700, $fontF:'gilroy') ;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.help {
+  padding: 70px 10px;
+  .title {
+    position: relative;
+    img {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      top: 0;
+      right: 0;
+    }
+  }
+  .help__items {
+    margin-top: 10px;
+    @include grid(3,) ;
+    .help__card {
+      background: #EDF3F6;
+      padding: 30px 18px 0 14px;
+      h3 {
+        @include font($fontSize:24px, $fontW:700, $fontF:'Proxima_Nova') ;
+        text-align: center;
+      }
+      .help__wrapper{
+        margin-top: 34px;
+        @include flex($align: start,) ;
+        .help__title {
+          display: none;
+        }
+      }
+      .help__text {
+        @include flex($justify: start, $isGap:true,$gap:10px) ;
+        margin-top: 7px;
+        i{
+          color: $btnColor;
+          font-size: 8px;
+        }
+        p {
+          @include font($fontSize:14px, $fontW:400, $fontF:'Proxima_Nova') ;
+        }
+      }
+      .help__text_top{
+        margin-top: 40px;
+        a {
+          @include font($color:$btnColor,$fontSize:14px, $fontW:600, $fontF:'Proxima_Nova');
+          text-transform: uppercase;
+        }
+        i {
+          @include font($color:$btnColor,$fontSize:14px,);
+        }
+      }
+    }
+    .help__img {
+      @include iframe(204px, 227px) ;
+      img {
+        @include image-dimensions(100%, 100%,) ;
+      }
+    }
+    .help__img_fridge {
+      @include iframe(204px, 228px) ;
+    }
+  }
+}
+
+.master {
+  .master__card {
+    padding: 59px 0;
+    @include flex($justify: start,$isGap:true,$gap:30px);
+  }
+  .title__second {
+    display: none;
+  }
+  .title__thirt{
+    display: none;
+  }
+  .master__box {
+    position: relative;
+    border-radius: 3px;
+    border: 1px solid #EDF3F6;
+    background: #EDF3F6;
+    padding: 27px 265px 20px 34px;
+    img {
+      position: absolute;
+      @include iframe(203px,166px);
+      top: -24px;
+      right: 45px;
+    }
+    .master__text {
+      position: relative;
+      h4 {
+        @include font($fontSize:18px, $fontW:600, $fontF:'Proxima_Nova') ;
+      }
+      .master__display {
+        display: none;
+      }
+      p{
+        @include font($fontSize:13px, $fontF:'Proxima_Nova') ;
+      }
+    }
+    .master__text::before {
+      content: '';
+      width: 5px;
+      height: 35px;
+      border-radius: 1px;
+      background: #09D743;
+      position: absolute;
+      top: 0;
+      left: -13px;
+    }
+    .master__search {
+      margin-top: 21px;
+      background: #fff;
+      @include flex($justify: start, $align: center,$isGap:false,$gap:20px);
+      border-radius: 3px;
+      width: 363px;
+      input {
+        padding: 12px 0 12px 18px;
+        outline: none;
+        border: none;
+        width: 280px;
+      }
+      button {
+       @include btn($peddBnt:12px 20px 12px 20px,$fontSize:14px,);
+
+      }
+    }
+    .master__chek {
+      margin-top: 11px;
+      @include flex($justify: start,$isGap:true,$gap:9px,);
+      input {
+        border-radius: 3px;
+        color: $btnColor;
+      }
+      label {
+        @include font($fontSize:11px, $fontW:400,) ;
+        opacity: 0.5;
+      }
+    }
+  }
+  .master__menu {
+    position: relative;
+    img {
+      position: absolute;
+      top: -35px;
+      right: -120px;
+      @include iframe(195px,169px);
+      z-index: -11;
+      
+    }
+    .master__font{
+      @include flex($justify: start,$isGap:true,$gap:9px,);
+      margin-top: 11px;
+      p {
+        @include font($fontSize:14px, $fontW:700,) ;
+      }
+    }
+  }
+  .master__map {
+    display: none;
+  }
+  .master__finder {
+    display: none;
+  }
+}
+
+.info {
+  padding: 111px 0px 40px 0px;
+  .swiper {
+    padding: 0 70px;
+  }
+  .info__wrapper {
+    padding: 60px 0;
+  }
+  .info__card{
+    border: 1px solid #EDF3F6;
+    border-radius: 3px;
+  }
+  .info__text {
+    position: relative;
+    padding: 20px 30px;
+    h2 {
+      position: relative;
+      @include font($fontSize:20px, $fontW:700,) ;
+    }
+    h2::before {
+      content: '';
+      width: 80px;
+      height: 5px;
+      border-radius: 1px;
+      background: #09D743;
+      position: absolute;
+      bottom: -10px;
+      left: 0px;
+    }
+    h5 {
+      @include font($fontSize:18px, $fontW:600,) ;
+      margin-top: 20px;
+    }
+    p {
+      @include font($fontSize:12px, $fontW:400,) ;
+      margin-top: 15px;
+      width: 139px;
+    }
+    img {
+      @include image-dimensions(217px, 227px, contain);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 11;
+    }
+  }
+  .info__comment {
+    position: relative;
+    padding: 21px 37px 24px 59px;
+    border-radius: 3px;
+    background: #EDF3F6;
+    p {
+      @include font($fontSize:14px, $fontW:400,) ;
+    }
+    svg {
+      position: absolute;
+      top: 23px;
+      left: 25px;
+    }
+  }
+  .swiper-button-next::after {
+    border: 3px solid #3C93F0;
+    font-size: 20px;
+    border-radius: 100%;
+    padding: 5px 10px;
+  }
+  .swiper-button-prev::after{
+    border: 3px solid #3C93F0;
+    font-size: 20px;
+    font-weight: 900;
+    border-radius: 100%;
+    padding: 5px 10px;
+  }
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+    width: 30px;
+    height: 5px;
+    border-radius: 0;
+  }
+  .master__menu {
+    display: none;
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      right: -11px;
+      @include iframe(142px,98px);
+      z-index: -11;
+      
+    }
+    .master__font{
+      @include flex($justify: start,$isGap:true,$gap:9px,);
+      margin-top: 11px;
+      p {
+        @include font($fontSize:10px, $fontW:700,) ;
+      }
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+.client {
+  .container {
+    padding: 0;
+  }
+  .client__btn{
+    button {
+      @include btn($btnColor:#F1F5F9, $fontW:500, $peddBnt:18px 38px 16px 41px, $bg:#3C93F0, $border:1px solid #F1F5F9, $fontSize:14px,$fontF:'gilroy' );
+    }
+  }
+  .client__img {
+    @include grid(6);
+    padding: 30px 0;
+    img {
+      @include image-dimensions(100%,100%,);
+    }
+  }
+  .client__card{
+    @include flex();
+    padding: 0 0 30px;
+  }
+  .client__box {
+    @include flex($isGap:true,$gap:20px);
+  }
+  .client__rating {
+    @include border($color:#EDF3F6);
+    padding: 10px 20px 10px 28px;
+    @include flex($isGap:true,$gap:20px);
+    position: relative;
+    .flag {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      z-index: -1;
+    }
+    span {
+      @include font($color:#000,$fontSize:18px, $fontW:600,);
+    }
+  }
+  .client__text{
+    .star {
+      i{
+        color:$bgColor;
+      }
+    }
+    h6{
+      @include font($color:#878787,$fontSize:12px, $fontW:700,);
+      margin-top: 5px;
+    }
+    p {
+      @include font($color:#878787,$fontSize:12px, $fontW:400,);
+    }
+  }
+  .client__grade {
+    p {
+      @include font($color:#878787,$fontSize:12px, $fontW:400,);
+    }
+  }
+}
+
+.about {
+  padding: 30px 0;
+  .about__cards {
+    @include grid (3);
+    padding: 30px 0;
+  }
+  .about__items {
+    h4 {
+      @include font ($fontSize:18px, $fontW:700, $fontF:'gilroy');
+      margin-bottom: 13px;
+    }
+  }
+  .about__box {
+    background: #EDF3F6;
+    border-radius: 3px;
+    padding: 36px 20px 23px 42px;
+    position: relative;
+    p {
+      @include font ($fontSize:14px, $fontW:400, $fontF:'Proxima Nova');
+      width: 50%;
+      line-height: normal;
+      position: relative;
+    }
+    p::after {
+      content: '';
+      width: 4px;
+      height: 35px;
+      border-radius: 1px;
+      background: #09D743;
+      position: absolute;
+      top: 0;
+      left: -13px;
+    }
+    .about__clock {
+      @include image-dimensions(121px,184px,contain);
+      position: absolute;
+      right: 23px;
+      top: -52px;
+    }
+    .about__gear {
+      @include image-dimensions(137px,190px,contain);
+      position: absolute;
+      right: 23px;
+      top: -52px;
+    }
+    .about__gift{
+      @include image-dimensions(121px,184px,contain);
+      position: absolute;
+      right: 23px;
+      top: -52px;
+    }
+  }
+}
+
+footer {
+  background: $textColor;
+  padding: 33px 0 20px 0;
+  width: 100%;
+  position: relative;
+  .footer__tel {
+    text-align: center;
+    a{
+      @include font ($color: #fff, $fontSize:24px, $fontW:900,$fontF:'gilroy');
+      span {
+        @include font ($color: #FED036, $fontSize:36px,$fontW:900 ,$fontF:'gilroy');
+      }
+    }
+  }
+  .footer__info {
+    @include flex ($justify: center,);
+    gap: 5px;
+    margin-top: 11px;
+    a {
+      @include font ($color:#FED036, $fontSize:14px, $fontW:400, $fontF:'Proxima Nova');
+      text-decoration: underline;
+    }
+  }
+  .footer__inn {
+    @include font ($color:#fff, $fontSize:14px, $fontW:400, $fontF:'Proxima Nova');
+    text-align: center;
+    margin-top: 15px;
+  }
+  .footer__link {
+      text-align: center;
+      margin-top: 15px;
+      a{
+        @include font ($color:#FED036, $fontSize:14px, $fontW:400, $fontF:'Proxima Nova');
+        text-decoration: underline;
+      }
+  }
+  .footer__text {
+    @include font ($color:#fff, $fontSize:14px, $fontW:400, $fontF:'Proxima Nova');
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .footer__end {
+    @include font ($color:#edf3f6af, $fontSize:9px, $fontW:400, $fontF:'Proxima Nova');
+    text-align: center;
+    width: 582px;
+    margin: auto;
+  }
+  .footet__topBtn{
+    position: absolute;
+    @include flex;
+    gap: 5px;
+    padding: 9px 13px;
+    background: #3C93F0;
+    border-radius: 3px;
+    top: -15px;
+    left: 47%;
+    a{
+      @include font ($color:#fff, $fontSize:14px, $fontW:600, $fontF:'Proxima Nova');
+    }
+  }
+}
+
+// media
+
+
+
+/* ==============1280=================== */
+
+@media only screen and (max-width: 1280px) {
+
+
+  nav {
+    .nav__menu {
+      ul {
+        gap:20px;
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+    .nav__info{
+      p{
+       font-size: 12px;
+      }
+    }
+  }
+
+  .help {
+    .help__items {
+      .help__card {
+        h3 {
+          @include font($fontSize:16px, $fontW:600, $fontF:'Proxima_Nova') ;
+        }
+        .help__text {
+          @include flex($justify: start, $isGap:true,$gap:10px) ;
+          margin-top: 5px;
+          i{
+            color: $btnColor;
+            font-size: 6px;
+          }
+          p {
+            @include font($fontSize:10px, $fontW:400, $fontF:'Proxima_Nova') ;
+          }
+        }
+        .help__text_top{
+          margin-top: 20px;
+          a {
+            @include font($color:$btnColor,$fontSize:10px, $fontW:600, $fontF:'Proxima_Nova');
+            text-transform: uppercase;
+          }
+          i {
+            @include font($color:$btnColor,$fontSize:11px,);
+          }
+        }
+      }
+      .help__img {
+        @include iframe(204px, 160px) ;
+        img {
+          @include image-dimensions(100%, 100%, contain) ;
+        }
+      }
+      .help__img_fridge {
+        @include iframe(204px, 160px) ;
+      }
+    }
+  }
+
+  .master {
+    .master__card {
+      padding: 40px 60px;
+      @include flex($justify: start,$isGap:true,$gap:15px);
+    }
+    .master__box {
+      padding: 16px 70px 16px 25px;
+      img {
+        @include iframe(160px,130px);
+        top: -16px;
+        right: 10px;
+      }
+      .master__text {
+        position: relative;
+        h4 {
+          @include font($fontSize:14px, $fontW:600, $fontF:'Proxima_Nova') ;
+        }
+        p{
+          @include font($fontSize:10px, $fontF:'Proxima_Nova') ;
+          margin-top: 5px;
+        }
+      }
+      .master__text::before {
+        content: '';
+        width: 4px;
+        height: 35px;
+      }
+      .master__search {
+        width: 350px;
+        input {
+          padding: 10px 0 10px 16px;
+        }
+        button {
+         @include btn($peddBnt:10px 16px 10px 16px,$fontSize:10px,);
+  
+        }
+      }
+      .master__chek {
+        margin-top: 11px;
+        input {
+          width: 7px;
+        }
+        label {
+          @include font($fontSize:10px, $fontW:400,) ;
+          opacity: 0.5;
+        }
+      }
+    }
+    .master__menu {
+      img {
+        top: -10px;
+        right: -93px;
+        @include iframe(155px,112px);
+        z-index: -11;
+        
+      }
+      .master__font{
+        margin-bottom: 18px;
+        p {
+          @include font($fontSize:10px, $fontW:700,) ;
+        }
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  .info {
+    padding: 40px 20px 40px 20px;
+    .info__text {
+      img {
+        @include image-dimensions(160px, 190px, contain);
+      }
+    }
+  }
+  .client {
+    .client__img {
+      @include grid(5);
+      gap: 15px;
+    }
+  }
+
+  .about {
+    padding: 30px 0;
+    .about__cards {
+      @include grid (2);
+    }
+  }
+
+}
+/* ==============1024=================== */
+
+@media only screen and (max-width: 1024px) {
+  
+  nav {
+    padding: 10px 0;
+    .nav__logo {
+      img {
+        width: 120px;
+        height: 35px;
+      }
+    }
+    .burger {
+      display: block;
+      i {
+        font-size: 40px;
+        color: #3C93F0;
+      }
+    }
+    .close {
+      @include flex($justify:flex-end);
+      width: 100%;
+      margin-bottom: 40px;
+
+      i {
+        font-size: 35px;
+        color: #3C93F0;
+      }
+    }
+    .nav__menu {
+      ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        gap: 40px;
+        margin-left: 0;
+        a {
+          font-size: 18px;
+        }
+      }
+    }
+    .nav__sidebar {
+      position: fixed;
+      bottom: 0;
+      right: -100%;
+      background-color: #fff;
+      width: 300px;
+      height: 100vh;
+      flex-direction: column;
+      padding: 30px 40px;
+      transition: all 0.5s ease;
+      z-index: 1;
+    }
+    .nav__info{
+      p{
+       font-size: 18px;
+      }
+    }
+    .nav__tel {
+      a {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .banner {
+    .banner__box {
+      h2{
+        font-size: 24px;
+      }
+      h1{
+        font-size: 42px;
+      }
+      .banner__order{
+        p {
+          font-size: 18px
+        }
+      }
+    }
+  }
+
+  .help {
+    padding: 60px 50px;
+    .help__items {
+      @include grid(2) ;
+    }
+  }
+
+  .master {
+    .master__card {
+      padding: 40px 45px;
+      @include flex($justify: start,$isGap:true,$gap:30px);
+    }
+    .master__box {
+      padding: 16px 60px 16px 25px;
+      img {
+        @include iframe(130px,106px);
+        top: -16px;
+        right: 10px;
+      }
+      .master__text {
+        position: relative;
+        h4 {
+          @include font($fontSize:10px, $fontW:600, $fontF:'Proxima_Nova') ;
+        }
+        p{
+          @include font($fontSize:8px, $fontF:'Proxima_Nova') ;
+          margin-top: 5px;
+        }
+      }
+      .master__text::before {
+        content: '';
+        width: 4px;
+        height: 29px;
+      }
+      .master__search {
+        @include flex($justify: start, $align: center,$isGap:false,$gap:20px);
+        width: 287px;
+        input {
+          padding: 6px 0 6px 16px;
+          font-size: 10px;
+        }
+        button {
+         @include btn($peddBnt:8px 16px 8px 16px,$fontSize:10px,);
+  
+        }
+      }
+      .master__chek {
+        margin-top: 11px;
+        input {
+          width: 7px;
+        }
+        label {
+          @include font($fontSize:8px, $fontW:400,) ;
+          opacity: 0.5;
+        }
+      }
+    }
+    .master__menu {
+      img {
+        top: 0;
+        right: -80px;
+        @include iframe(126px,91px);
+        z-index: -11;
+        
+      }
+      .master__font{
+        margin-bottom: 18px;
+        p {
+          @include font($fontSize:8px, $fontW:700,) ;
+        }
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+
+  .info {
+    padding: 0 30px ;
+
+    .info__text {
+      padding: 16px;
+      h2 {
+        @include font($fontSize:16px,) ;
+      }
+      h2::before {
+        content: '';
+        width: 80px;
+        height: 4px;
+        bottom: -10px;
+      }
+      h5 {
+        @include font($fontSize:14px) ;
+      }
+      p {
+        @include font($fontSize:10px) ;
+        width: 55%;
+      }
+      img {
+        @include image-dimensions(126px, 148px, contain);
+      }
+    }
+    .info__comment {
+      padding: 16px 16px 16px 40px;
+      p {
+        @include font($fontSize:10px) ;
+      }
+      svg {
+        width: 14px;
+        height: 10px;
+        top: 15px;
+        left: 16px;
+      }
+    }
+  }
+  .client {
+    .client__img {
+      @include grid(4);
+      gap: 20px;
+      .hidden {
+        display: none;
+      }
+    }
+    .client__btn{
+      button {
+        @include btn($peddBnt:14px 30px 13px 32px, $fontSize:10px,);
+      }
+    }
+    .client__rating {
+      padding: 4px 16px 8px 21px;
+      .flag {
+        top: 0;
+        left: 13px;
+        width: 31.807px;
+        height: 47.71px;
+      }
+      span {
+        @include font($fontSize:14px,);
+      }
+    }
+    .client__text{
+      .star {
+        display: flex;
+
+        i{
+          color:$bgColor;
+          font-size: 12px;
+        }
+      }
+      h6{
+        @include font($color:#878787,$fontSize:9px, $fontW:700,);
+        margin-top: 0;
+      }
+      p {
+        @include font($color:#878787,$fontSize:9px, $fontW:400,);
+      }
+    }
+    .client__grade {
+      p {
+        @include font($color:#878787,$fontSize:9px, $fontW:400,);
+      }
+      svg {
+        width: 63.613px;
+        height: 18.289px;
+      }
+    }
+  }
+  .about {
+    .about__cards {
+      @include grid (3);
+    }
+    .about__items {
+      h4 {
+        @include font ($fontSize:12px, $fontW:700, $fontF:'gilroy');
+      }
+    }
+    .about__box {
+      padding: 18px 20px 18px 32px;
+      p {
+        @include font ($fontSize:10px, $fontW:400, $fontF:'Proxima Nova');
+        width: 61%;
+      }
+      .about__clock {
+        @include image-dimensions(71px,109px,contain);
+        right: 17px;
+        top: -33px;
+      }
+      .about__gear {
+        @include image-dimensions(84px,101px,contain);
+        right: 10px;
+        top: -35px;
+      }
+      .about__gift{
+        @include image-dimensions(91px,126px,contain);
+        right: 7px;
+        top: -35px;
+      }
+    }
+  }
+}
+
+/* ==============768=================== */
+
+@media only screen and (max-width: 768px) {
+  
+  nav {
+    .nav__logo {
+      img {
+        @include image-dimensions(84px, 25px);
+      }
+    }
+    .burger {
+      i {
+        font-size: 25px;
+      }
+    }
+    .nav__menu {
+      .nav__info_mobile {
+        display: block;
+        margin-top: 30px;
+        text-align: center;
+      }
+      .nav__tel_mobile {
+        display: block;
+        text-align: center;
+        margin-bottom: 25px;
+      }
+    }
+    .nav__sidebar {
+      padding: 20px 40px;
+    }
+    .nav__info{
+      display: none;
+    }
+    .nav__tel {
+      display: none;
+    }
+  }
+
+  .banner {
+    .banner__box {
+      h2{
+        font-size: 20px;
+      }
+      h1{
+        font-size: 32px;
+      }
+      .banner__order{
+        p {
+          font-size: 14px
+        }
+      }
+    }
+    .banner__form{
+      display: none;
+    }
+    .banner__rotate {
+      display: none;
+    }
+    .btn{
+      display: block !important;
+    }
+    .banner__btn{
+        display: block !important;
+    }
+  }
+
+  .help {
+    padding: 40px 30px;
+    .title {
+      img {
+        display: none;
+      }
+    }
+    .help__items {
+      @include grid(1);
+      .help__card {
+        h3 {
+          @include font($fontSize:16px, $fontW:600, $fontF:'Proxima_Nova') ;
+        }
+        .help__text {
+          margin-top: 5px;
+          i{
+            color: $btnColor;
+            font-size: 6px;
+          }
+          p {
+            @include font($fontSize:10px, $fontW:400, $fontF:'Proxima_Nova') ;
+          }
+        }
+        .help__text_top{
+          margin-top: 20px;
+          a {
+            @include font($color:$btnColor,$fontSize:10px, $fontW:600, $fontF:'Proxima_Nova');
+            text-transform: uppercase;
+          }
+          i {
+            @include font($color:$btnColor,$fontSize:11px,);
+          }
+        }
+      }
+      .help__img {
+        @include iframe(204px, 160px) ;
+        img {
+          @include image-dimensions(100%, 100%, contain) ;
+        }
+      }
+      .help__img_fridge {
+        @include iframe(204px, 160px) ;
+      }
+    }
+  }
+
+  .master {
+    .master__card {
+      padding: 40px 0;
+      @include flex($direction: column,);
+    }
+    .master__box{
+      img {
+        display: none;
+      }
+    }
+  }
+  .info {
+    padding: 0 20px;
+    .info__wrapper {
+      padding: 15px 0 40px;
+    }
+    
+  }
+
+  .client {
+    .client__img {
+      @include grid(3);
+      gap: 9px;
+    }
+    .client__box {
+      @include flex($direction: column,$isGap:true,$gap:20px);
+    }
+  }
+
+  .about {
+    .about__cards {
+      @include grid (2);
+    }
+    .about__items {
+      h4 {
+        @include font ($fontSize:10px, $fontW:700, $fontF:'gilroy');
+      }
+    }
+    .about__box {
+      padding: 18px 20px 18px 32px;
+      p {
+        @include font ($fontSize:8px, $fontW:400, $fontF:'Proxima Nova');
+        width: 61%;
+      }
+      .about__clock {
+        @include image-dimensions(56px,86px,contain);
+        right: 17px;
+        top: -33px;
+      }
+      .about__gear {
+        @include image-dimensions(67px,80px,contain);
+        right: 10px;
+        top: -26px;
+      }
+      .about__gift{
+        @include image-dimensions(72px,100px,contain);
+        right: 7px;
+        top: -35px;
+      }
+    }
+  }
+
+  footer {
+    .footer__tel {
+      a{
+        @include font ($color: #fff, $fontSize:20px, $fontW:900,$fontF:'gilroy');
+        span {
+          @include font ($color: #FED036, $fontSize:28px,$fontW:900);
+        }
+      }
+    }
+    .footer__info {
+      a {
+        @include font ($color:#FED036, $fontSize:10px, $fontW:400, $fontF:'Proxima Nova');
+      }
+    }
+    .footer__inn {
+      @include font ($color:#fff, $fontSize:10px, $fontW:400, $fontF:'Proxima Nova');
+    }
+    .footer__link {
+        a{
+          @include font ($color:#FED036, $fontSize:10px, $fontW:400, $fontF:'Proxima Nova');
+        }
+    }
+    .footer__text {
+      @include font ($color:#fff, $fontSize:10px, $fontW:400, $fontF:'Proxima Nova');
+    }
+    .footer__end {
+      @include font ($color:#edf3f6af, $fontSize:8px, $fontW:400, $fontF:'Proxima Nova');
+      width: 100%;
+    }
+    .footet__topBtn {
+      left: 45%;
+      a {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+/* ==============640=================== */
+
+@media only screen and (max-width: 640px) {
+  .banner {
+    .banner__wrapper {
+      @include flex($direction: column);
+    }
+    .banner__box {
+      align-items: center;
+      gap: 10px;
+      h2{
+        display: none;
+      }
+      .banner__titlemobile{
+        display: block;
+        font-size: 28px;
+        text-align: center;
+      }
+      h1{
+        display: none;
+      }
+      .banner__text {
+        font-size: 18px;
+        display: block;
+        text-align: center;
+      }
+      .banner__order{
+        display: none;
+      }
+    }
+    .banner__img {
+      margin-left: 10px;
+    }
+  }
+
+  .help {
+    padding: 40px 0;
+    .help__items {
+      @include grid(1);
+      .help__card {
+        padding: 15px 5px 0 10px;
+        h3 {
+          @include font($fontSize:16px, $fontW:600, $fontF:'Proxima_Nova') ;
+        }
+        .help__wrapper{
+          margin-top: 15px;
+        }
+        .help__text {
+          margin-top: 5px;
+          i{
+            color: $btnColor;
+            font-size: 6px;
+          }
+          p {
+            @include font($fontSize:10px, $fontW:400, $fontF:'Proxima_Nova') ;
+          }
+        }
+        .help__text_top{
+          margin-top: 20px;
+          a {
+            @include font($color:$btnColor,$fontSize:10px, $fontW:600, $fontF:'Proxima_Nova');
+            text-transform: uppercase;
+          }
+          i {
+            @include font($color:$btnColor,$fontSize:11px,);
+          }
+        }
+      }
+      .help__img {
+        @include iframe(204px, 160px) ;
+        img {
+          @include image-dimensions(100%, 100%, contain) ;
+        }
+      }
+      .help__img_fridge {
+        @include iframe(204px, 160px) ;
+      }
+      .help__box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        gap: 10px;
+        align-items: center;
+        flex-shrink: 1.5;
+      }
+    }
+  }
+
+  .info {
+    padding: 0 20px;
+    .info__wrapper {
+      padding: 15px 0 40px;
+    }
+    .swiper {
+      padding: 0 0;
+    }
+    .swiper-button-next {
+      display: none;
+    }
+    .swiper-button-prev {
+      display: none;
+    }
+  }
+  .about {
+    .about__cards {
+      @include grid (1);
+    }
+    .about__items {
+      h4 {
+        @include font ($fontSize:10px, $fontW:700, $fontF:'gilroy');
+      }
+    }
+    .about__box {
+      padding: 18px 20px 18px 32px;
+      p {
+        @include font ($fontSize:8px, $fontW:400, $fontF:'Proxima Nova');
+        width: 61%;
+      }
+      p::after {
+        content: '';
+        width: 4px;
+        height: 25px;
+        border-radius: 1px;
+        background: #09D743;
+        position: absolute;
+        top: 0;
+        left: -13px;
+      }
+      .about__clock {
+        @include image-dimensions(56px,86px,contain);
+        right: 17px;
+        top: -33px;
+      }
+      .about__gear {
+        @include image-dimensions(67px,80px,contain);
+        right: 10px;
+        top: -26px;
+      }
+      .about__gift{
+        @include image-dimensions(72px,100px,contain);
+        right: 7px;
+        top: -35px;
+      }
+    }
+  }
+}
+
+/* ==============450=================== */
+
+@media only screen and (max-width: 450px) {
+  nav {
+    .nav__logo {
+      img {
+        @include image-dimensions(80px, 21px);
+      }
+    }
+    .burger {
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .banner {
+    .banner__button{
+      bottom: 0;
+      .btn{
+          @include btn(#fff,600,15px 19px 15px 19px,#3C93F0,none,16px);
+      }
+      button.banner__btn{
+          @include btn(#fff,600,15px 19px 15px 19px,#09D743,none,16px);
+      }
+  }
+  }
+
+  .master {
+    .master__card {
+      gap: 0;
+      align-items: stretch;
+    }
+    .title__first {
+      display: none;
+    }
+    .title__second{
+      display: flex;
+    }
+    .title__thirt {
+      display: flex;
+    }
+    .master__box {
+      padding: 16px 125px 16px 25px;
+      img {
+        display: block;
+        @include iframe(110px,92px);
+        top: -16px;
+        right: 12px;
+
+      }
+      .master__text {
+        h4 {
+          display: none;
+        }
+        .master__display {
+          display: block;
+          font-size: 12px;
+        }
+        p{
+          line-height: 14px;
+        }
+      }
+      .master__text::before {
+        content: '';
+        width: 5px;
+        height: 60px;
+        top: 0;
+        left: -13px;
+      }
+      .master__search {
+        display: none;
+      }
+      .master__chek {
+        display: none;
+      }
+    }
+    .master__menu {
+      display: none;
+    }
+    .master__map {
+      position: relative;
+      display: block;
+      .master__mapImage {
+        @include image-dimensions(100%, 100%, contain);
+      }
+      .master__gorl {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @include image-dimensions(137px, 166px, contain);
+      }
+      .master__svgSecond {
+        position: absolute;
+        bottom: 53%;
+        right: 48%;
+      }
+      .master__svgFirst {
+        position: absolute;
+        top: 14%;
+        right: 39%;
+      }
+      .master__svgThird {
+        position: absolute;
+        top: 28%;
+        left: 34%;
+      }
+      .master__svgFourth {
+        position: absolute;
+        top: 31%;
+        left: 66%;
+      }
+      .master__svgFifth {
+        position: absolute;
+        top: 60%;
+        right: 63%;
+      }
+    }
+    .master__finder {
+      display: block;
+      border-radius: 0px 0px 3px 3px;
+      background: #EDF3F6;
+      @include flex($justify: start, $align: center,$isGap:false,$gap:20px);
+      padding: 10px 16px;
+      input {
+        padding: 12px 0 12px 18px;
+        outline: none;
+        border: none;
+        width: 280px;
+      }
+      button {
+       @include btn($peddBnt:12px 20px 12px 20px,$fontSize:14px,);
+
+      }
+    }
+  }
+
+  .info {
+    .info__wrapper {
+      padding: 10px 0 40px;
+    }
+    .master__menu {
+      display: block;
+      .master__font{
+        margin-bottom: 18px;
+      }
+    }
+  }
+
+  .client {
+    .client__img {
+      @include grid(2);
+      gap: 5px;
+    }
+    .client__card{
+      padding: 0 0 20px;
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
+    .client__box{
+      flex-direction: row-reverse;
+      gap: 10px;
+    }
+    .client__btn{
+      button {
+        @include btn($peddBnt:12px 20px 12px 20px, $fontSize:10px,);
+      }
+    }
+    .client__rating {
+      padding: 2px 9px 10px 8px;
+      gap: 15px;
+      .flag {
+        left: 4px;
+        width: 22px;
+        height: 33px;
+      }
+      span {
+        @include font($fontSize:10px,);
+      }
+    }
+    .client__text{
+      .star {
+        i{
+          font-size: 8px;
+        }
+      }
+      h6{
+        @include font($color:#878787,$fontSize:6px, $fontW:700,);
+        margin-top: 3px;
+      }
+      p {
+        @include font($color:#878787,$fontSize:6px, $fontW:400,);
+      }
+    }
+    .client__grade {
+      p {
+        @include font($color:#878787,$fontSize:6px, $fontW:400,);
+      }
+      svg {
+        width: 42px;
+        height: 14px;
+      }
+    }
+  }
+
+  footer {
+    .footer__tel {
+      a{
+        @include font ($color: #fff, $fontSize:28px, $fontW:900,$fontF:'gilroy');
+        span {
+          @include font ($color: #FED036, $fontSize:28px,$fontW:900);
+        }
+      }
+    }
+    .footer__info {
+      a {
+        @include font ($color:#FED036, $fontSize:12px, $fontW:400, $fontF:'Proxima Nova');
+      }
+    }
+    .footet__topBtn {
+      left: 39%;
+      gap: 20px;
+      padding: 4px 13px;
+      top: -10px;
+      a {
+        font-size: 10px;
+      }
+    }
+  }
+}
