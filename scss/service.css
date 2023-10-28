@@ -256,6 +256,179 @@ nav .nav__tel a span {
   color: #FED036;
 }
 
+.banner {
+  position: relative;
+  padding-top: 30px;
+  background: #FED036;
+}
+.banner .banner__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner .banner__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 30px;
+}
+.banner .banner__box h2 {
+  color: #3E3E3E;
+  font-weight: 600;
+  font-size: 30px;
+  font-family: "Proxima Nova";
+}
+.banner .banner__box h1 {
+  color: #fff;
+  font-weight: 900;
+  font-size: 60px;
+  font-family: "gilroy";
+  text-transform: uppercase;
+}
+.banner .banner__box .banner__order {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+.banner .banner__box .banner__order p {
+  color: #3E3E3E;
+  font-weight: 400;
+  font-size: 24px;
+  font-family: "Proxima Nova";
+}
+.banner .banner__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.banner .banner__button {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+  transform: translate(-50%);
+}
+.banner .banner__button .btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: Montserrat;
+  padding: 16px 26px 15px 19px;
+  background-color: #3C93F0;
+  border: none;
+  border-radius: 4px;
+  font-family: "Proxima Nova";
+  border-radius: 3px 0 0 3px;
+  flex-shrink: 0;
+  display: none;
+}
+.banner .banner__button .btn svg {
+  margin-right: 10px;
+}
+.banner .banner__button .banner__btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: Montserrat;
+  padding: 16px 31px 15px 19px;
+  background-color: #09D743;
+  border: none;
+  border-radius: 4px;
+  font-family: "Proxima Nova";
+  border-radius: 0 3px 3px 0;
+  flex-shrink: 0;
+  display: none;
+}
+.banner .banner__button .banner__btn svg {
+  margin-right: 10px;
+}
+.banner .banner__titlemobile {
+  display: none;
+  color: #fff;
+  font-weight: 900;
+  font-size: 60px;
+  font-family: "gilroy";
+}
+.banner .banner__text {
+  display: none;
+  color: #3E3E3E;
+  font-weight: 600;
+  font-size: 30px;
+  font-family: "Proxima Nova";
+}
+.banner .banner__form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 0 0 0 20px;
+}
+.banner .banner__form input[type=number] {
+  outline: none;
+  border: 0;
+  padding: 17px 0;
+}
+.banner .banner__form input[type=submit] {
+  outline: none;
+  border: 0;
+  background-color: #3C93F0;
+  padding: 17px 23px 16px 21px;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 24px;
+  font-family: "gilroy";
+}
+.banner .banner__form .banner__flag {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+}
+.banner .banner__rotate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: -73px;
+  top: 300px;
+  transform: rotate(90deg);
+  background: #3C93F0;
+  padding: 10px;
+  border-radius: 5px;
+}
+.banner .banner__rotate svg {
+  transform: rotate(-90deg);
+}
+.banner .banner__rotate p {
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  font-family: "gilroy";
+  text-transform: uppercase;
+}
+
 footer {
   background: #3E3E3E;
   padding: 33px 0 20px 0;
@@ -360,6 +533,15 @@ footer .footet__topBtn a {
   nav .nav__info p {
     font-size: 12px;
   }
+  .banner .banner__box h2 {
+    font-size: 24px;
+  }
+  .banner .banner__box h1 {
+    font-size: 42px;
+  }
+  .banner .banner__box .banner__order p {
+    font-size: 18px;
+  }
 }
 /* ==============1024=================== */
 @media only screen and (max-width: 1024px) {
@@ -417,6 +599,15 @@ footer .footet__topBtn a {
   nav .nav__tel a {
     font-size: 24px;
   }
+  .banner .banner__box h2 {
+    font-size: 20px;
+  }
+  .banner .banner__box h1 {
+    font-size: 32px;
+  }
+  .banner .banner__box .banner__order p {
+    font-size: 18px;
+  }
 }
 /* ==============768=================== */
 @media only screen and (max-width: 768px) {
@@ -446,6 +637,27 @@ footer .footet__topBtn a {
   }
   nav .nav__tel {
     display: none;
+  }
+  .banner .banner__box h2 {
+    font-size: 20px;
+  }
+  .banner .banner__box h1 {
+    font-size: 32px;
+  }
+  .banner .banner__box .banner__order p {
+    font-size: 14px;
+  }
+  .banner .banner__form {
+    display: none;
+  }
+  .banner .banner__rotate {
+    display: none;
+  }
+  .banner .btn {
+    display: block !important;
+  }
+  .banner .banner__btn {
+    display: block !important;
   }
   footer .footer__tel a {
     color: #fff;
@@ -498,6 +710,40 @@ footer .footet__topBtn a {
   }
 }
 /* ==============640=================== */
+@media only screen and (max-width: 640px) {
+  .banner .banner__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .banner .banner__box {
+    align-items: center;
+    gap: 10px;
+  }
+  .banner .banner__box h2 {
+    display: none;
+  }
+  .banner .banner__box .banner__titlemobile {
+    display: block;
+    font-size: 28px;
+    text-align: center;
+  }
+  .banner .banner__box h1 {
+    display: none;
+  }
+  .banner .banner__box .banner__text {
+    font-size: 18px;
+    display: block;
+    text-align: center;
+  }
+  .banner .banner__box .banner__order {
+    display: none;
+  }
+  .banner .banner__img {
+    margin-left: 10px;
+  }
+}
 /* ==============450=================== */
 @media only screen and (max-width: 450px) {
   nav .nav__logo img {
@@ -507,6 +753,31 @@ footer .footet__topBtn a {
   }
   nav .burger i {
     font-size: 24px;
+  }
+  .banner .banner__button {
+    bottom: 0;
+  }
+  .banner .banner__button .btn {
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: Montserrat;
+    padding: 15px 19px 15px 19px;
+    background-color: #3C93F0;
+    border: none;
+    border-radius: 4px;
+    font-family: "Proxima Nova";
+  }
+  .banner .banner__button button.banner__btn {
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: Montserrat;
+    padding: 15px 19px 15px 19px;
+    background-color: #09D743;
+    border: none;
+    border-radius: 4px;
+    font-family: "Proxima Nova";
   }
   footer .footer__tel a {
     color: #fff;

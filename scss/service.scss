@@ -62,6 +62,115 @@ nav {
   }
 }
 
+.banner {
+  position: relative;
+  padding-top: 30px;
+  background:$bgColor;
+  .banner__wrapper {
+    @include flex;
+  }
+  .banner__box {
+    @include flex ($direction: column, $align: start);
+    gap: 30px;
+    h2{
+      @include font ($fontSize:30px, $fontW:600,$fontF:'Proxima Nova');
+    }
+    h1{
+      @include font ($color:#fff, $fontSize:60px, $fontW:900,$fontF:'gilroy');
+      text-transform: uppercase;
+    }
+    .banner__order{
+      @include flex($justify: start,);
+      gap: 10px;
+      p {
+        @include font ($fontSize:24px, $fontW:400,$fontF:'Proxima Nova');
+      }
+    }
+  }
+  .banner__img {
+    img {
+      @include image-dimensions(100%, 100%, contain);
+    }
+  }
+  .banner__button{
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    @include flex($justify:center,$align:end);
+    transform: translate(-50%);
+    .btn{
+        @include flex($justify:center,);
+        gap: 10px;
+        @include btn(#fff,600,16px 26px 15px 19px,#3C93F0,none,18px);
+        border-radius: 3px 0 0 3px;
+        flex-shrink: 0;
+        display: none;
+        svg {
+          margin-right: 10px;
+        }
+    }
+    .banner__btn{
+        @include flex($justify:center);
+        gap: 10px;
+        @include btn(#fff,600,16px 31px 15px 19px,#09D743,none,18px);
+        border-radius: 0 3px 3px 0;
+        flex-shrink: 0;
+        display: none;
+        svg {
+          margin-right: 10px;
+        }
+    }
+}
+  .banner__titlemobile{
+    display: none;
+    @include font ($color:#fff, $fontSize:60px, $fontW:900,$fontF:'gilroy');
+  }
+  .banner__text {
+    display: none;
+    @include font ($fontSize:30px, $fontW:600,$fontF:'Proxima Nova');
+  }
+  .banner__form{
+    @include flex;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 0 0 0 20px;
+    input[type="number"]{
+        outline: none;
+        border: 0;
+        padding: 17px 0;
+    }
+    input[type="submit"]{
+        outline: none;
+        border: 0;
+        background-color:#3C93F0;
+        padding: 17px 23px 16px 21px;
+        border-radius: 3px;
+        @include font(#fff,24px,500,'gilroy');
+    }
+    .banner__flag{
+        @include flex;
+        margin-right: 10px;
+    }
+}
+  .banner__rotate {
+    @include flex( $align: center);
+    position: absolute;
+    left: -73px;
+    top: 300px;
+    transform: rotate(90deg);
+    background: #3C93F0;
+    padding: 10px;
+    border-radius: 5px;
+    svg {
+      transform: rotate(-90deg);
+    }
+    p {
+      @include font($color:#fff, $fontSize:12px, $fontW:700, $fontF:'gilroy') ;
+      text-transform: uppercase;
+    }
+  }
+}
+
 footer {
   background: $textColor;
   padding: 33px 0 20px 0;
@@ -133,7 +242,6 @@ footer {
 
 @media only screen and (max-width: 1280px) {
 
-
   nav {
     .nav__menu {
       ul {
@@ -146,6 +254,22 @@ footer {
     .nav__info{
       p{
        font-size: 12px;
+      }
+    }
+  }
+
+  .banner {
+    .banner__box {
+      h2{
+        font-size: 24px;
+      }
+      h1{
+        font-size: 42px;
+      }
+      .banner__order{
+        p {
+          font-size: 18px
+        }
       }
     }
   }
@@ -215,6 +339,23 @@ footer {
       }
     }
   }
+
+  .banner {
+    .banner__box {
+      h2{
+        font-size: 20px;
+      }
+      h1{
+        font-size: 32px;
+      }
+      .banner__order{
+        p {
+          font-size: 18px
+        }
+      }
+    }
+  }
+
 }
 
 /* ==============768=================== */
@@ -254,6 +395,35 @@ footer {
       display: none;
     }
   }
+
+  .banner {
+    .banner__box {
+      h2{
+        font-size: 20px;
+      }
+      h1{
+        font-size: 32px;
+      }
+      .banner__order{
+        p {
+          font-size: 14px
+        }
+      }
+    }
+    .banner__form{
+      display: none;
+    }
+    .banner__rotate {
+      display: none;
+    }
+    .btn{
+      display: block !important;
+    }
+    .banner__btn{
+        display: block !important;
+    }
+  }
+
   footer {
     .footer__tel {
       a{
@@ -295,6 +465,37 @@ footer {
 /* ==============640=================== */
 
 @media only screen and (max-width: 640px) {
+  .banner {
+    .banner__wrapper {
+      @include flex($direction: column);
+    }
+    .banner__box {
+      align-items: center;
+      gap: 10px;
+      h2{
+        display: none;
+      }
+      .banner__titlemobile{
+        display: block;
+        font-size: 28px;
+        text-align: center;
+      }
+      h1{
+        display: none;
+      }
+      .banner__text {
+        font-size: 18px;
+        display: block;
+        text-align: center;
+      }
+      .banner__order{
+        display: none;
+      }
+    }
+    .banner__img {
+      margin-left: 10px;
+    }
+  }
 }
 
 /* ==============450=================== */
@@ -312,6 +513,19 @@ footer {
       }
     }
   }
+
+  .banner {
+    .banner__button{
+      bottom: 0;
+      .btn{
+          @include btn(#fff,600,15px 19px 15px 19px,#3C93F0,none,16px);
+      }
+      button.banner__btn{
+          @include btn(#fff,600,15px 19px 15px 19px,#09D743,none,16px);
+      }
+  }
+  }
+
   footer {
     .footer__tel {
       a{
