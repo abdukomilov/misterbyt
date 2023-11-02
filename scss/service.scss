@@ -1,8 +1,23 @@
+
 @import "fonts";
 @import url('/misterbyt/css/conts.css');
 @import "mixins";
 @import "variables";
-
+.title{
+    @include flex (column, $isGap:true,$gap:20px);
+    h2{
+        @include font($textColor,48px,900,'gilroy');
+    }
+    p{
+        @include font($textColor,24px);
+        text-align: center;
+    }
+    i{
+        color:#3E3E3E33;
+        font-size: 50px;
+    }
+}
+// ============================NAVBAR=====================
 nav {
   padding: 20px 0;
   .nav__wrapper {
@@ -61,121 +76,518 @@ nav {
     }
   }
 }
-
-.banner {
-  position: relative;
-  padding-top: 30px;
-  background:$bgColor;
-  .banner__wrapper {
-    @include flex;
+// =======================BANNER=====================
+.banner{
+    background:$bgColor;
+    .banner__content{
+        @include flex ($justify:center);
+    }
+    .banner__text{
+        @include flex(column,center,start,true,30px);
+        h2{
+            @include font($fontSize:30px,$fontW:600);
+        }
+        h1{
+            @include font(#fff,60px,900,'gilroy');
+            max-width: 600px;
+        }
+        .banner__text-icon{
+            @include flex($isGap:ture,$gap:10px);
+            p{
+                @include font($fontSize:24px);
+            }
+        }
+    }
+    .banner__form{
+        div{
+            @include flex ($isGap:true,$gap:6px);
+            background: #fff;
+            padding: 0px 10px;
+            cursor: pointer;
+        }
+        @include flex;
+        background: #fff;
+        border-radius:4px;
+        input{
+            outline: none;
+            border:none;
+        }
+        input[type="submit"]{
+            @include font(#fff,18px,500,'gilroy');
+            @include btn ($border:none,$fontF:'gilroy', $fontSize:18px);
+        }
+    }
+    .banner__img{
+        position: relative;
+        margin-top: 40px;
+        img{
+            width: 350px;
+            object-fit: contain;
+        }
+        .banner__img-icon{
+            position: absolute;
+            z-index: 10;
+            top: 0;
+            right: -40px;
+            border-radius:50%;
+            background: $btnColor;
+            padding: 15px 17px;
+            border:4px solid #fff;
+        }
+    }
+    .banner__button{
+        @include flex;
+        position: absolute;
+        z-index: 30;
+        bottom:0;
+        left: 50%;
+        transform: translate(-50%,50%);
+        display: none;
+        .banner__btn{
+            display: inline-block;
+            @include font;
+            @include flex($isGap:true, $gap:17px);
+            background:#3C93F0;
+            width: 150px;
+            color:#fff;
+            outline: none;
+            border:none;
+            padding: 16px;
+            border-radius: 3px 0px 0px 3px;
+            svg{
+                width: 20px;
+                height: 20px;
+            }
+        }
+        .banner__button_color{
+            padding: 16px;
+            border-radius: 0px 3px 3px 0px;
+            background: #09D743 !important;
+        }
+    }
+}
+// ===========================price==================
+.price{
+    margin-top: 30px;
+    .price__wrapper{
+        width: 100%;
+        @include flex(column,$isGap:true,$gap:30px);
+        .price__line-block{
+            width: 100%;
+            @include flex(column);
+            border-collapse: collapse;
+        }
+        .price__free-block{
+            @include flex ($isGap:true);
+            border-collapse:collapse;
+            .price__free-item{
+                @include flex;
+                width: 382px;
+                padding: 18px 15px 17px 20px;
+                border: 1px dashed #3C93F0;
+                p{
+                    white-space: nowrap;
+                    @include font;
+                }
+                a{
+                    @include flex ($isGap:true, $gap:10px);
+                    @include font;
+                }
+            }
+        }
+        .price__button{
+            width: 100%;
+            background: #EDF3F6;
+            @include flex (row, center,center);
+            padding: 12px 0;
+            .price__btn{
+                @include btn;
+                @include font(#fff,14px,600);
+            }
+        }
+        .price__line{
+            padding: 13px 17px 12px 25px;
+            width: 100%;
+            border: 1px solid #F1F1F1;
+            background: #FFF;
+            @include flex;
+            .price__book-order{
+                @include flex ($isGap:true,$gap:40px);
+                a{
+                    @include font(#3C93F0,14px);
+                    @include flex($isGap:true, $gap:14px);
+                    svg{
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+                .price__number{
+                    @include font($textColor,24px,700);
+                }
+            }
+            .price__text{
+                @include flex ($isGap:true,$gap:20px);
+                h3{
+                    @include font($textColor,24px,700);
+                    white-space: nowrap;
+                }
+                .price__info{
+                    @include font($textColor,14px);
+                    opacity: 0.5;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}
+// ============================SLIDER==================
+.slider{
+  margin-top: 40px;
+  .slider__content{
+    @include flex ($isGap:true,$gap:20px);
+    padding: 0 35px;
   }
-  .banner__box {
-    @include flex ($direction: column, $align: start);
-    gap: 30px;
-    h2{
-      @include font ($fontSize:30px, $fontW:600,$fontF:'Proxima Nova');
+  .slider__card{
+    @include flex(column);
+    border:2px solid #F1F1F1;
+    border-radius:3px;
+    background:#fff;
+    padding: 30px;
+    .slider__title{
+      @include flex;
+      width: 100%;
+      margin-bottom: 33px;
+      .slider__logo{
+        @include flex;
+        border-radius: 3px;
+        background: #FED036;
+        padding: 15px 17px;
+      }
+      .slider__cost{
+        @include flex (column,end,end, $isGap:true,$gap:5px);
+        span{
+          @include font(#3E3E3E,24px, 700);
+        }
+        p{
+          @include font(#878787,14px);
+        }
+      }
     }
-    h1{
-      @include font ($color:#fff, $fontSize:60px, $fontW:900,$fontF:'gilroy');
-      text-transform: uppercase;
+    .slide__info{
+      @include flex;
+      width: 100%;
+      margin-bottom: 25px;
+      p{
+        @include font(#878787,14px);
+      }
+      span{
+        @include font($fontW:700);
+      }
     }
-    .banner__order{
-      @include flex($justify: start,);
-      gap: 10px;
-      p {
-        @include font ($fontSize:24px, $fontW:400,$fontF:'Proxima Nova');
+    .slider__ava{
+      @include flex (row,start,start,true);
+      width: 100%;
+      img{
+        width: 40px;
+        height: 40px;
+      }
+      div{
+        @include flex(column,start,start,true,5px);
+        p{
+          @include font(#878787,14px);
+        }
+        h4{
+          @include font($fontW:700);
+        }
       }
     }
   }
-  .banner__img {
-    img {
-      @include image-dimensions(100%, 100%, contain);
-    }
-  }
-  .banner__button{
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    @include flex($justify:center,$align:end);
-    transform: translate(-50%);
-    .btn{
-        @include flex($justify:center,);
-        gap: 10px;
-        @include btn(#fff,600,16px 26px 15px 19px,#3C93F0,none,18px);
-        border-radius: 3px 0 0 3px;
-        flex-shrink: 0;
-        display: none;
-        svg {
-          margin-right: 10px;
-        }
-    }
-    .banner__btn{
-        @include flex($justify:center);
-        gap: 10px;
-        @include btn(#fff,600,16px 31px 15px 19px,#09D743,none,18px);
-        border-radius: 0 3px 3px 0;
-        flex-shrink: 0;
-        display: none;
-        svg {
-          margin-right: 10px;
-        }
-    }
 }
-  .banner__titlemobile{
-    display: none;
-    @include font ($color:#fff, $fontSize:60px, $fontW:900,$fontF:'gilroy');
+// =============================BRANDS===================================
+.brands{
+  margin-top: 40px;
+  .barnds__wrapper{
+    @include flex(column);
+    .brands__logo{
+      @include grid(6);
+      a{
+        img{
+          object-fit: contain;
+        }
+      }
+    }
   }
-  .banner__text {
-    display: none;
-    @include font ($fontSize:30px, $fontW:600,$fontF:'Proxima Nova');
+}
+// ===========================MASTER================================
+.master {
+  .master__card {
+    padding: 59px 0;
+    @include flex($justify: start,$isGap:true,$gap:30px);
   }
-  .banner__form{
-    @include flex;
-    background-color: #fff;
+  .title__second {
+    display: none;
+  }
+  .title__thirt{
+    display: none;
+  }
+  .master__box {
+    position: relative;
     border-radius: 3px;
-    padding: 0 0 0 20px;
-    input[type="number"]{
-        outline: none;
-        border: 0;
-        padding: 17px 0;
+    border: 1px solid #EDF3F6;
+    background: #EDF3F6;
+    padding: 27px 265px 20px 34px;
+    img {
+      position: absolute;
+      @include iframe(203px,166px);
+      top: -24px;
+      right: 45px;
     }
-    input[type="submit"]{
+    .master__text {
+      position: relative;
+      h4 {
+        @include font($fontSize:18px, $fontW:600, $fontF:'Proxima_Nova') ;
+      }
+      .master__display {
+        display: none;
+      }
+      p{
+        @include font($fontSize:13px, $fontF:'Proxima_Nova') ;
+      }
+    }
+    .master__text::before {
+      content: '';
+      width: 5px;
+      height: 35px;
+      border-radius: 1px;
+      background: #09D743;
+      position: absolute;
+      top: 0;
+      left: -13px;
+    }
+    .master__search {
+      margin-top: 21px;
+      background: #fff;
+      @include flex($justify: start, $align: center,$isGap:false,$gap:20px);
+      border-radius: 3px;
+      width: 363px;
+      input {
+        padding: 12px 0 12px 18px;
         outline: none;
-        border: 0;
-        background-color:#3C93F0;
-        padding: 17px 23px 16px 21px;
+        border: none;
+        width: 280px;
+      }
+      button {
+       @include btn($peddBnt:12px 20px 12px 20px,$fontSize:14px,);
+
+      }
+    }
+    .master__chek {
+      margin-top: 11px;
+      @include flex($justify: start,$isGap:true,$gap:9px,);
+      input {
         border-radius: 3px;
-        @include font(#fff,24px,500,'gilroy');
+        color: $btnColor;
+      }
+      label {
+        @include font($fontSize:11px, $fontW:400,) ;
+        opacity: 0.5;
+      }
     }
-    .banner__flag{
-        @include flex;
-        margin-right: 10px;
+  }
+  .master__menu {
+    position: relative;
+    img {
+      position: absolute;
+      top: -35px;
+      right: -120px;
+      @include iframe(195px,169px);
+      z-index: -11;
+      
     }
+    .master__font{
+      @include flex($justify: start,$isGap:true,$gap:9px,);
+      margin-top: 11px;
+      p {
+        @include font($fontSize:14px, $fontW:700,) ;
+      }
+    }
+  }
+  .master__map {
+    display: none;
+  }
+  .master__finder {
+    display: none;
+  }
 }
-  .banner__rotate {
-    @include flex( $align: center);
-    position: absolute;
-    left: -73px;
-    top: 300px;
-    transform: rotate(90deg);
-    background: #3C93F0;
-    padding: 10px;
-    border-radius: 5px;
-    svg {
-      transform: rotate(-90deg);
+// ===========================INFO===========================
+.info {
+  padding: 111px 0px 40px 0px;
+  .swiper {
+    padding: 0 70px;
+  }
+  .info__wrapper {
+    padding: 60px 0;
+  }
+  .info__card{
+    border: 1px solid #EDF3F6;
+    border-radius: 3px;
+  }
+  .info__text {
+    position: relative;
+    padding: 20px 30px;
+    h2 {
+      position: relative;
+      @include font($fontSize:20px, $fontW:700,) ;
+    }
+    h2::before {
+      content: '';
+      width: 80px;
+      height: 5px;
+      border-radius: 1px;
+      background: #09D743;
+      position: absolute;
+      bottom: -10px;
+      left: 0px;
+    }
+    h5 {
+      @include font($fontSize:18px, $fontW:600,) ;
+      margin-top: 20px;
     }
     p {
-      @include font($color:#fff, $fontSize:12px, $fontW:700, $fontF:'gilroy') ;
-      text-transform: uppercase;
+      @include font($fontSize:12px, $fontW:400,) ;
+      margin-top: 15px;
+      width: 139px;
+    }
+    img {
+      @include image-dimensions(217px, 227px, contain);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 11;
+    }
+  }
+  .info__comment {
+    position: relative;
+    padding: 21px 37px 24px 59px;
+    border-radius: 3px;
+    background: #EDF3F6;
+    p {
+      @include font($fontSize:14px, $fontW:400,) ;
+    }
+    svg {
+      position: absolute;
+      top: 23px;
+      left: 25px;
+    }
+  }
+  .swiper-button-next::after {
+    border: 3px solid #3C93F0;
+    font-size: 20px;
+    border-radius: 100%;
+    padding: 5px 10px;
+  }
+  .swiper-button-prev::after{
+    border: 3px solid #3C93F0;
+    font-size: 20px;
+    font-weight: 900;
+    border-radius: 100%;
+    padding: 5px 10px;
+  }
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+    width: 30px;
+    height: 5px;
+    border-radius: 0;
+  }
+  .master__menu {
+    display: none;
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      right: -11px;
+      @include iframe(142px,98px);
+      z-index: -11;
+      
+    }
+    .master__font{
+      @include flex($justify: start,$isGap:true,$gap:9px,);
+      margin-top: 11px;
+      p {
+        @include font($fontSize:10px, $fontW:700,) ;
+      }
+      svg {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 }
-
+// =========================CLIENT==============================
+.client {
+  .container {
+    padding: 0;
+  }
+  .client__btn{
+    button {
+      @include btn($btnColor:#F1F5F9, $fontW:500, $peddBnt:18px 38px 16px 41px, $bg:#3C93F0, $border:1px solid #F1F5F9, $fontSize:14px,$fontF:'gilroy' );
+    }
+  }
+  .client__img {
+    @include grid(6);
+    padding: 30px 0;
+    img {
+      @include image-dimensions(100%,100%,);
+    }
+  }
+  .client__card{
+    @include flex();
+    padding: 0 0 30px;
+  }
+  .client__box {
+    @include flex($isGap:true,$gap:20px);
+  }
+  .client__rating {
+    @include border($color:#EDF3F6);
+    padding: 10px 20px 10px 28px;
+    @include flex($isGap:true,$gap:20px);
+    position: relative;
+    .flag {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      z-index: -1;
+    }
+    span {
+      @include font($color:#000,$fontSize:18px, $fontW:600,);
+    }
+  }
+  .client__text{
+    .star {
+      i{
+        color:$bgColor;
+      }
+    }
+    h6{
+      @include font($color:#878787,$fontSize:12px, $fontW:700,);
+      margin-top: 5px;
+    }
+    p {
+      @include font($color:#878787,$fontSize:12px, $fontW:400,);
+    }
+  }
+  .client__grade {
+    p {
+      @include font($color:#878787,$fontSize:12px, $fontW:400,);
+    }
+  }
+}
+// ===================================FOOTER===============================
 footer {
   background: $textColor;
   padding: 33px 0 20px 0;
   width: 100%;
   position: relative;
+  margin-top: 30px;
   .footer__tel {
     text-align: center;
     a{
@@ -233,15 +645,9 @@ footer {
     }
   }
 }
-
-// media
-
-
-
+// =============================media=============================
 /* ==============1280=================== */
-
 @media only screen and (max-width: 1280px) {
-
   nav {
     .nav__menu {
       ul {
@@ -257,28 +663,121 @@ footer {
       }
     }
   }
-
-  .banner {
-    .banner__box {
-      h2{
-        font-size: 24px;
+  .price__free-item{
+      width: 329px !important;
+  }
+  .brands__logo{
+   grid-template-columns: repeat(5, 1fr) !important;
+  }
+  .master {
+    .master__card {
+      padding: 40px 60px;
+      @include flex($justify: start,$isGap:true,$gap:15px);
+    }
+    .master__box {
+      padding: 16px 70px 16px 25px;
+      img {
+        @include iframe(160px,130px);
+        top: -16px;
+        right: 10px;
       }
-      h1{
-        font-size: 42px;
+      .master__text {
+        position: relative;
+        h4 {
+          @include font($fontSize:14px, $fontW:600, $fontF:'Proxima_Nova') ;
+        }
+        p{
+          @include font($fontSize:10px, $fontF:'Proxima_Nova') ;
+          margin-top: 5px;
+        }
       }
-      .banner__order{
+      .master__text::before {
+        content: '';
+        width: 4px;
+        height: 35px;
+      }
+      .master__search {
+        width: 350px;
+        input {
+          padding: 10px 0 10px 16px;
+        }
+        button {
+         @include btn($peddBnt:10px 16px 10px 16px,$fontSize:10px,);
+  
+        }
+      }
+      .master__chek {
+        margin-top: 11px;
+        input {
+          width: 7px;
+        }
+        label {
+          @include font($fontSize:10px, $fontW:400,) ;
+          opacity: 0.5;
+        }
+      }
+    }
+    .master__menu {
+      img {
+        top: -10px;
+        right: -93px;
+        @include iframe(155px,112px);
+        z-index: -11;
+        
+      }
+      .master__font{
+        margin-bottom: 18px;
         p {
-          font-size: 18px
+          @include font($fontSize:10px, $fontW:700,) ;
+        }
+        svg {
+          width: 20px;
+          height: 20px;
         }
       }
     }
   }
 
+  .info {
+    padding: 40px 20px 40px 20px;
+    .info__text {
+      img {
+        @include image-dimensions(160px, 190px, contain);
+      }
+    }
+  }
+  .client {
+    .client__img {
+      @include grid(5);
+      gap: 15px;
+    }
+  }
+}
+@media only screen and (max-width: 1075px) {
+    .price__free-item{
+        width: 309px !important;
+        p{
+          @include font ($fontSize:16px !important);
+      }
+      a{
+          @include font ($fontSize:16px !important);
+      }
+    }
 }
 /* ==============1024=================== */
-
 @media only screen and (max-width: 1024px) {
-  
+    .title{
+        gap: 18px;
+        h2{
+            font-size: 38px;
+        }
+        p{
+           font-size: 18px;
+        }
+        i{
+            font-size: 40px;
+        }
+    }
   nav {
     padding: 10px 0;
     .nav__logo {
@@ -339,29 +838,244 @@ footer {
       }
     }
   }
-
-  .banner {
-    .banner__box {
-      h2{
-        font-size: 20px;
-      }
-      h1{
-        font-size: 32px;
-      }
-      .banner__order{
-        p {
-          font-size: 18px
+  .banner{
+    background:$bgColor;
+    .banner__content{
+        @include flex($isGap:true !important,$gap:30px !important);
+    }
+    .banner__text{
+        h2{
+            @include font($fontSize:24px,$fontW:600);
         }
+        h1{
+            @include font(#fff,42px,900,'gilroy');
+        }
+        .banner__text-icon{
+            p{
+                @include font($fontSize:18px);
+            }
+        }
+    }
+    .banner__img{
+        img{
+            width: 300px;
+        }
+    }
+}
+.slider__card{
+  padding: 20px !important;
+}
+.price{
+    .price__book-order{
+        .price__number{
+            font-size: 14px !important;
+            white-space: nowrap;
+        }
+    }
+    .price__text{
+        @include flex(column !important,start !important,start !important,$isGap:false !important,$gap:5px !important);
+        h3{
+            font-size: 14px !important;
+        }
+        .price__info{
+            font-weight: 700 !important;
+        }
+    }
+    .price__free-item{
+        padding: 14px 12px 13px 17px !important;
+        width: 259px !important;
+        p{
+          @include font ($fontSize:14px !important);
+      }
+      a{
+          @include font ($fontSize:14px !important);
+      }
+    }
+}
+.brands__logo{
+  grid-template-columns: repeat(4, 1fr) !important;
+ }
+ .master {
+  .master__card {
+    padding: 40px 45px;
+    @include flex($justify: start,$isGap:true,$gap:30px);
+  }
+  .master__box {
+    padding: 16px 60px 16px 25px;
+    img {
+      @include iframe(130px,106px);
+      top: -16px;
+      right: 10px;
+    }
+    .master__text {
+      position: relative;
+      h4 {
+        @include font($fontSize:10px, $fontW:600, $fontF:'Proxima_Nova') ;
+      }
+      p{
+        @include font($fontSize:8px, $fontF:'Proxima_Nova') ;
+        margin-top: 5px;
+      }
+    }
+    .master__text::before {
+      content: '';
+      width: 4px;
+      height: 29px;
+    }
+    .master__search {
+      @include flex($justify: start, $align: center,$isGap:false,$gap:20px);
+      width: 287px;
+      input {
+        padding: 6px 0 6px 16px;
+        font-size: 10px;
+      }
+      button {
+       @include btn($peddBnt:8px 16px 8px 16px,$fontSize:10px,);
+
+      }
+    }
+    .master__chek {
+      margin-top: 11px;
+      input {
+        width: 7px;
+      }
+      label {
+        @include font($fontSize:8px, $fontW:400,) ;
+        opacity: 0.5;
       }
     }
   }
-
+  .master__menu {
+    img {
+      top: 0;
+      right: -80px;
+      @include iframe(126px,91px);
+      z-index: -11;
+      
+    }
+    .master__font{
+      margin-bottom: 18px;
+      p {
+        @include font($fontSize:8px, $fontW:700,) ;
+      }
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
 }
 
-/* ==============768=================== */
+.info {
+  padding: 0 30px ;
 
+  .info__text {
+    padding: 16px;
+    h2 {
+      @include font($fontSize:16px,) ;
+    }
+    h2::before {
+      content: '';
+      width: 80px;
+      height: 4px;
+      bottom: -10px;
+    }
+    h5 {
+      @include font($fontSize:14px) ;
+    }
+    p {
+      @include font($fontSize:10px) ;
+      width: 55%;
+    }
+    img {
+      @include image-dimensions(126px, 148px, contain);
+    }
+  }
+  .info__comment {
+    padding: 16px 16px 16px 40px;
+    p {
+      @include font($fontSize:10px) ;
+    }
+    svg {
+      width: 14px;
+      height: 10px;
+      top: 15px;
+      left: 16px;
+    }
+  }
+}
+.client {
+  .client__img {
+    @include grid(4);
+    gap: 20px;
+    .hidden {
+      display: none;
+    }
+  }
+  .client__btn{
+    button {
+      @include btn($peddBnt:14px 30px 13px 32px, $fontSize:10px,);
+    }
+  }
+  .client__rating {
+    padding: 4px 16px 8px 21px;
+    .flag {
+      top: 0;
+      left: 13px;
+      width: 31.807px;
+      height: 47.71px;
+    }
+    span {
+      @include font($fontSize:14px,);
+    }
+  }
+  .client__text{
+    .star {
+      display: flex;
+
+      i{
+        color:$bgColor;
+        font-size: 12px;
+      }
+    }
+    h6{
+      @include font($color:#878787,$fontSize:9px, $fontW:700,);
+      margin-top: 0;
+    }
+    p {
+      @include font($color:#878787,$fontSize:9px, $fontW:400,);
+    }
+  }
+  .client__grade {
+    p {
+      @include font($color:#878787,$fontSize:9px, $fontW:400,);
+    }
+    svg {
+      width: 63.613px;
+      height: 18.289px;
+    }
+  }
+}
+}
+/* ==============768=================== */
+@media only screen and (max-width: 860px) {
+  .brands__logo{
+    grid-template-columns: repeat(3, 1fr) !important;
+   }
+}
 @media only screen and (max-width: 768px) {
-  
+    .title{
+        gap: 16px;
+        h2{
+            font-size: 32px;
+        }
+        p{
+           font-size: 14px;
+        }
+        i{
+            font-size: 30px;
+        }
+    }
   nav {
     .nav__logo {
       img {
@@ -395,35 +1109,102 @@ footer {
       display: none;
     }
   }
-
-  .banner {
-    .banner__box {
-      h2{
-        font-size: 20px;
-      }
-      h1{
-        font-size: 32px;
-      }
-      .banner__order{
-        p {
-          font-size: 14px
+  .banner{
+    background:$bgColor;
+    .banner__content{
+        @include flex(column, $isGap:true !important,$gap:30px !important);
+    }
+    .banner__text{
+        @include flex (column,space-between,center);
+        div{
+            @include flex (column-reverse, $isGap:true,$gap:10px);
+            margin-top: 30px;
         }
-      }
+        h2{
+            @include font($fontSize:20px,$fontW:600);
+            text-align: center
+        }
+        h1{
+            @include font(#fff,32px,900,'gilroy');
+            text-align: center;
+        }
+        div.banner__text-icon{
+            p{
+                @include font($fontSize:14px);
+            }
+        }
+    }
+    .banner__img{
+        margin-top: 0;
+        img{
+            width: 250px;
+        }
+        div.banner__img-icon{
+            padding: 10px 12px;
+            right: -25px;
+        }
+        svg{
+            width: 44px;
+            height: 44px;
+        }
+        div.banner__button{
+            display: block;
+            @include flex;
+        }
     }
     .banner__form{
+        display: none;
+    }
+}
+.price{
+    margin-top: 40px;
+    .price__book-order{
+        a{
+            display: none !important;
+        }
+    }
+    .price__info{
+        font-size: 10px !important;
+        font-weight: 400 !important;
+    }
+    .price__free-block{
+        @include flex(column !important, $isGap:false !important, $gap:0 !important);
+    .price__free-item_border{
+        border-top: 0 !important;border-bottom: 0 !important;
+    }
+    }
+    .price__free-item{
+        width: 300px !important;
+    }
+}
+.master {
+  .master__card {
+    padding: 40px 0;
+    @include flex($direction: column,);
+  }
+  .master__box{
+    img {
       display: none;
-    }
-    .banner__rotate {
-      display: none;
-    }
-    .btn{
-      display: block !important;
-    }
-    .banner__btn{
-        display: block !important;
     }
   }
+}
+.info {
+  padding: 0 20px;
+  .info__wrapper {
+    padding: 15px 0 40px;
+  }
+  
+}
 
+.client {
+  .client__img {
+    @include grid(3);
+    gap: 9px;
+  }
+  .client__box {
+    @include flex($direction: column,$isGap:true,$gap:20px);
+  }
+}
   footer {
     .footer__tel {
       a{
@@ -461,46 +1242,48 @@ footer {
     }
   }
 }
-
 /* ==============640=================== */
-
 @media only screen and (max-width: 640px) {
-  .banner {
-    .banner__wrapper {
-      @include flex($direction: column);
+  .slider__card{
+    padding: 15px !important;
+  }
+  .brands__logo{
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0px !important;
+    img{
+      width: 150px;
     }
-    .banner__box {
-      align-items: center;
-      gap: 10px;
-      h2{
-        display: none;
-      }
-      .banner__titlemobile{
-        display: block;
-        font-size: 28px;
-        text-align: center;
-      }
-      h1{
-        display: none;
-      }
-      .banner__text {
-        font-size: 18px;
-        display: block;
-        text-align: center;
-      }
-      .banner__order{
-        display: none;
-      }
+   }
+  .info {
+    padding: 0 20px;
+    .info__wrapper {
+      padding: 15px 0 40px;
     }
-    .banner__img {
-      margin-left: 10px;
+    .swiper {
+      padding: 0 0;
+    }
+    .swiper-button-next {
+      display: none;
+    }
+    .swiper-button-prev {
+      display: none;
     }
   }
 }
-
 /* ==============450=================== */
-
 @media only screen and (max-width: 450px) {
+    .title{
+        gap: 10px;
+        h2{
+            font-size: 24px;
+        }
+        p{
+           font-size: 12px;
+        }
+        i{
+            font-size: 35px;
+        }
+    }
   nav {
     .nav__logo {
       img {
@@ -513,19 +1296,196 @@ footer {
       }
     }
   }
-
-  .banner {
-    .banner__button{
-      bottom: 0;
-      .btn{
-          @include btn(#fff,600,15px 19px 15px 19px,#3C93F0,none,16px);
-      }
-      button.banner__btn{
-          @include btn(#fff,600,15px 19px 15px 19px,#09D743,none,16px);
-      }
+  .price{
+    .price__line{
+        padding: 5px 10px !important;
+    }
+      .price__number{
+        font-size: 12px !important;
+    }
+      .price__info{
+        font-size: 8px !important;
+    }
   }
+  .slider__content{
+    padding: 0 !important;
+  }
+  .master {
+    .master__card {
+      gap: 0;
+      align-items: stretch;
+    }
+    .title__first {
+      display: none;
+    }
+    .title__second{
+      display: flex;
+    }
+    .title__thirt {
+      display: flex;
+    }
+    .master__box {
+      padding: 16px 125px 16px 25px;
+      img {
+        display: block;
+        @include iframe(110px,92px);
+        top: -16px;
+        right: 12px;
+
+      }
+      .master__text {
+        h4 {
+          display: none;
+        }
+        .master__display {
+          display: block;
+          font-size: 12px;
+        }
+        p{
+          line-height: 14px;
+        }
+      }
+      .master__text::before {
+        content: '';
+        width: 5px;
+        height: 60px;
+        top: 0;
+        left: -13px;
+      }
+      .master__search {
+        display: none;
+      }
+      .master__chek {
+        display: none;
+      }
+    }
+    .master__menu {
+      display: none;
+    }
+    .master__map {
+      position: relative;
+      display: block;
+      .master__mapImage {
+        @include image-dimensions(100%, 100%, contain);
+      }
+      .master__gorl {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @include image-dimensions(137px, 166px, contain);
+      }
+      .master__svgSecond {
+        position: absolute;
+        bottom: 53%;
+        right: 48%;
+      }
+      .master__svgFirst {
+        position: absolute;
+        top: 14%;
+        right: 39%;
+      }
+      .master__svgThird {
+        position: absolute;
+        top: 28%;
+        left: 34%;
+      }
+      .master__svgFourth {
+        position: absolute;
+        top: 31%;
+        left: 66%;
+      }
+      .master__svgFifth {
+        position: absolute;
+        top: 60%;
+        right: 63%;
+      }
+    }
+    .master__finder {
+      display: block;
+      border-radius: 0px 0px 3px 3px;
+      background: #EDF3F6;
+      @include flex($justify: start, $align: center,$isGap:false,$gap:20px);
+      padding: 10px 16px;
+      input {
+        padding: 12px 0 12px 18px;
+        outline: none;
+        border: none;
+        width: 280px;
+      }
+      button {
+       @include btn($peddBnt:12px 20px 12px 20px,$fontSize:14px,);
+
+      }
+    }
   }
 
+  .info {
+    .info__wrapper {
+      padding: 10px 0 40px;
+    }
+    .master__menu {
+      display: block;
+      .master__font{
+        margin-bottom: 18px;
+      }
+    }
+  }
+
+  .client {
+    .client__img {
+      @include grid(2);
+      gap: 5px;
+    }
+    .client__card{
+      padding: 0 0 20px;
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
+    .client__box{
+      flex-direction: row-reverse;
+      gap: 10px;
+    }
+    .client__btn{
+      button {
+        @include btn($peddBnt:12px 20px 12px 20px, $fontSize:10px,);
+      }
+    }
+    .client__rating {
+      padding: 2px 9px 10px 8px;
+      gap: 15px;
+      .flag {
+        left: 4px;
+        width: 22px;
+        height: 33px;
+      }
+      span {
+        @include font($fontSize:10px,);
+      }
+    }
+    .client__text{
+      .star {
+        i{
+          font-size: 8px;
+        }
+      }
+      h6{
+        @include font($color:#878787,$fontSize:6px, $fontW:700,);
+        margin-top: 3px;
+      }
+      p {
+        @include font($color:#878787,$fontSize:6px, $fontW:400,);
+      }
+    }
+    .client__grade {
+      p {
+        @include font($color:#878787,$fontSize:6px, $fontW:400,);
+      }
+      svg {
+        width: 42px;
+        height: 14px;
+      }
+    }
+  }
   footer {
     .footer__tel {
       a{
@@ -550,4 +1510,16 @@ footer {
       }
     }
   }
+}
+/*================320===================*/
+@media only screen and (max-width: 320px){
+    .title{
+        h2{
+            font-size: 20px;
+        }
+
+        i{
+            font-size: 25px;
+        }
+    }
 }
