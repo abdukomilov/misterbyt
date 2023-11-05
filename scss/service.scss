@@ -171,6 +171,592 @@ nav {
   }
 }
 
+.price {
+  margin-top: 30px;
+  .price__card{
+    padding-top: 30px;
+    width: 100%;
+    @include flex(column);
+    border-collapse: collapse;
+}
+.price__box{
+  padding: 13px 17px 12px 25px;
+  width: 100%;
+  border: 1px solid #F1F1F1;
+  background: #FFF;
+  @include flex;
+  .price__order{
+      @include flex ($isGap:true,$gap:40px);
+      a{
+          @include font(#3C93F0,14px);
+          @include flex($isGap:true, $gap:14px);
+          svg{
+              width: 25px;
+              height: 25px;
+          }
+      }
+      .price__number{
+          @include font($textColor,24px,700);
+      }
+  }
+  .price__text{
+      @include flex ($isGap:true,$gap:20px);
+      h3{
+          @include font($textColor,24px,700);
+          white-space: nowrap;
+      }
+      .price__info{
+          @include font($textColor,14px);
+          opacity: 0.5;
+          white-space: nowrap;
+      }
+  }
+}
+.price__button{
+  width: 100%;
+  background: #EDF3F6;
+  @include flex (row, center,center);
+  padding: 12px 0;
+  .price__btn{
+      @include btn;
+      @include font(#fff,14px,600);
+    }
+}
+.price__items{
+  margin-top: 30px;
+  margin-bottom: 70px;
+  @include grid (3);
+  border-collapse:collapse;
+  .price__block{
+      @include flex;
+      padding: 18px 15px 17px 20px;
+      border: 1px dashed #3C93F0;
+      p{
+          white-space: nowrap;
+          @include font;
+      }
+      a{
+          @include flex ($isGap:true, $gap:10px);
+          @include font;
+      }
+  }
+}
+
+}
+
+.slider{
+  margin-top: 40px;
+  .slider__content{
+    @include flex ($isGap:true,$gap:20px);
+    padding: 0 35px;
+  }
+  .slider__card{
+    @include flex(column);
+    border:2px solid #F1F1F1;
+    border-radius:3px;
+    background:#fff;
+    padding: 30px;
+    .slider__title{
+      @include flex;
+      width: 100%;
+      margin-bottom: 33px;
+      .slider__logo{
+        @include flex;
+        border-radius: 3px;
+        background: #FED036;
+        padding: 15px 17px;
+      }
+      .slider__cost{
+        @include flex (column,end,end, $isGap:true,$gap:5px);
+        span{
+          @include font(#3E3E3E,24px, 700);
+        }
+        p{
+          @include font(#878787,14px);
+        }
+      }
+    }
+    .slide__info{
+      @include flex;
+      width: 100%;
+      margin-bottom: 25px;
+      p{
+        @include font(#878787,14px);
+      }
+      span{
+        @include font($fontW:700);
+      }
+    }
+    .slider__ava{
+      @include flex (row,start,start,true);
+      width: 100%;
+      img{
+        width: 40px;
+        height: 40px;
+      }
+      div{
+        @include flex(column,start,start,true,5px);
+        p{
+          @include font(#878787,14px);
+        }
+        h4{
+          @include font($fontW:700);
+        }
+      }
+    }
+  }
+}
+
+.brand {
+  padding: 70px 0;
+  .brand__card {
+    padding: 20px 0 10px;
+    @include grid (6);
+    align-items: center;
+    img {
+      @include image-dimensions (90%, 90%, contain);
+      margin-bottom: 20px;
+    }
+  }
+  .brand__btn {
+    display: none;
+    button {
+      @include btn ($fontW:600, $peddBnt:4px 8px 4px 8px, $bg:#3C93F0, $border:1px solid #F1F5F9, $fontSize:10px);
+      @include flex ;
+    }
+  }
+}
+
+.repair {
+  padding-bottom: 80px;
+  .repair__card {
+    padding-top: 20px;
+  @include grid(3);
+  }
+  .repair__info {
+    h2 {
+      @include font($fontSize:36px, $fontW:900, $fontF:'gilroy');
+    }
+    p {
+      @include font($fontSize:18px, $fontW:500, $fontF:'gilroy');
+      margin-top: 30px;
+    }
+    button {
+      @include btn ($fontW:700, $peddBnt:16px 33px 16px 33px,$fontSize:14px,);
+      margin-top: 30px;
+    }
+    .repair__svg {
+      @include flex ($justify: start, $align:center,$isGap:true,$gap:20px);
+      margin-top: 30px;
+      p {
+        @include font ($color:#878787,$fontSize:14px, $fontW:500, $fontF:'gilroy');
+        margin-top: 0;
+      }
+    }
+  }
+  .repair__img {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    img {
+      @include image-dimensions (100%, 100%,)
+    }
+    .repair__number {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      @include font($color:#fff,$fontSize:14px, $fontW:500, $fontF:'gilroy');
+      span {
+        font-size: 38px;
+        font-weight: 700;
+      }
+    }
+    .repair__items {
+      position: absolute;
+      top: 30px;
+      right: 0;
+      background: #fff;
+      padding: 10px 5px;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      @include flex($direction: column, $justify: space-between, $align: center,$isGap:true,$gap:10px);
+      img {
+        @include image-dimensions (100%, 48px, contain)
+      }
+    }
+  }
+  .repair__text {
+    padding: 20px;
+    h3 {
+      @include font($fontSize:18px, $fontW:700, $fontF:'gilroy');
+    }
+    p {
+      @include font($fontSize:18px, $fontW:500, $fontF:'gilroy');
+    }
+    .repair__block {
+      @include flex ($justify: start, $align: center,$isGap:true,$gap:10px);
+      h6{
+        @include font ($color:#3E3E3E, $fontSize:14px, $fontW:700,);
+      }
+      p {
+        @include font ($color:#3E3E3E, $fontSize:14px, $fontW:400,);
+      }
+    }
+    .repair__date {
+      margin-top: 20px;
+      @include flex($justify: start, $align: center,$isGap:true,$gap:20px);
+    }
+  }
+  .repair__mobile {
+    display: none;
+  }
+}
+
+.about {
+  padding-bottom: 50px;
+  .about__wrapper {
+    @include grid(3) ;
+    .about__cards {
+      grid-column: 1/2;
+    }
+    .about__box {
+      padding: 15px 21px 14px 12px;
+      border: 1px solid #EDF3F6;
+      margin-bottom: 20px;
+      h5 {
+        @include font($fontSize:18px, $fontW:700, $fontF:'gilroy');
+      }
+      p {
+        @include font($fontSize:18px, $fontW:500, $fontF:'gilroy');
+      }
+    }
+    .about__box:hover {
+      background: #3C93F0;
+      h5 {
+        color: #EDF3F6;
+      }
+      p {
+        color: #EDF3F6;
+      }
+    }
+    .about__box_bottom {
+      margin-bottom: 0;
+    }
+    .about__second {
+      position: relative;
+      padding-right: 40px;
+      grid-column: 2/4;
+      background: url('/img/bg__about.png') center center/cover no-repeat;
+      @include flex ($direction: column, $justify: center, $align: end,$isGap:true,$gap:16px);
+      h3 {
+        @include font($fontSize:24px, $fontW:700, $fontF:'gilroy');
+        width: 424px;
+      }
+      p {
+        @include font($fontSize:18px, $fontW:500, $fontF:'gilroy');
+        width: 424px;
+      }
+      .about__number {
+        width: 20px;
+        @include font($color:#878787,$fontSize:9px, $fontW:400,);
+        position: absolute;
+        display: inline-block;
+        bottom: 15px;
+        right: 13px;
+      }
+    }
+    .about__secondmobile {
+      display: none;
+      padding: 35px 15px 35px 15px;
+      background: url('/img/bg_mobile.png') center center/cover no-repeat ;
+      position: relative;
+      h3 {
+        @include font($fontSize:18px, $fontW:700, $fontF:'gilroy');
+        text-align: center;
+      }
+      p {
+        @include font($fontSize:14px, $fontW:500, $fontF:'gilroy');
+        text-align: center;
+      }
+      .about__number {
+        width: 20px;
+        @include font($color:#878787,$fontSize:9px, $fontW:400,);
+        position: absolute;
+        display: inline-block;
+        bottom: 15px;
+        right: 13px;
+      }
+      img {
+        width: 316px;
+        height: 276px;
+      }
+    }
+  }
+}
+
+.master {
+  .master__card {
+    padding: 59px 0;
+    @include flex($justify: start,$isGap:true,$gap:30px);
+  }
+  .title__second {
+    display: none;
+  }
+  .title__thirt{
+    display: none;
+  }
+  .master__box {
+    position: relative;
+    border-radius: 3px;
+    border: 1px solid #EDF3F6;
+    background: #EDF3F6;
+    padding: 27px 265px 20px 34px;
+    img {
+      position: absolute;
+      @include iframe(203px,166px);
+      top: -24px;
+      right: 45px;
+    }
+    .master__text {
+      position: relative;
+      h4 {
+        @include font($fontSize:18px, $fontW:600, $fontF:'Proxima_Nova') ;
+      }
+      .master__display {
+        display: none;
+      }
+      p{
+        @include font($fontSize:13px, $fontF:'Proxima_Nova') ;
+      }
+    }
+    .master__text::before {
+      content: '';
+      width: 5px;
+      height: 35px;
+      border-radius: 1px;
+      background: #09D743;
+      position: absolute;
+      top: 0;
+      left: -13px;
+    }
+    .master__search {
+      margin-top: 21px;
+      background: #fff;
+      @include flex($justify: start, $align: center,$isGap:false,$gap:20px);
+      border-radius: 3px;
+      width: 363px;
+      input {
+        padding: 12px 0 12px 18px;
+        outline: none;
+        border: none;
+        width: 280px;
+      }
+      button {
+       @include btn($peddBnt:12px 20px 12px 20px,$fontSize:14px,);
+
+      }
+    }
+    .master__chek {
+      margin-top: 11px;
+      @include flex($justify: start,$isGap:true,$gap:9px,);
+      input {
+        border-radius: 3px;
+        color: $btnColor;
+      }
+      label {
+        @include font($fontSize:11px, $fontW:400,) ;
+        opacity: 0.5;
+      }
+    }
+  }
+  .master__menu {
+    position: relative;
+    img {
+      position: absolute;
+      top: -35px;
+      right: -120px;
+      @include iframe(195px,169px);
+      z-index: -11;
+      
+    }
+    .master__font{
+      @include flex($justify: start,$isGap:true,$gap:9px,);
+      margin-top: 11px;
+      p {
+        @include font($fontSize:14px, $fontW:700,) ;
+      }
+    }
+  }
+  .master__map {
+    display: none;
+  }
+  .master__finder {
+    display: none;
+  }
+}
+
+.info {
+  padding: 111px 0px 40px 0px;
+  .swiper {
+    padding: 0 70px;
+  }
+  .info__wrapper {
+    padding: 60px 0;
+  }
+  .info__card{
+    border: 1px solid #EDF3F6;
+    border-radius: 3px;
+  }
+  .info__text {
+    position: relative;
+    padding: 20px 30px;
+    h2 {
+      position: relative;
+      @include font($fontSize:20px, $fontW:700,) ;
+    }
+    h2::before {
+      content: '';
+      width: 80px;
+      height: 5px;
+      border-radius: 1px;
+      background: #09D743;
+      position: absolute;
+      bottom: -10px;
+      left: 0px;
+    }
+    h5 {
+      @include font($fontSize:18px, $fontW:600,) ;
+      margin-top: 20px;
+    }
+    p {
+      @include font($fontSize:12px, $fontW:400,) ;
+      margin-top: 15px;
+      width: 139px;
+    }
+    img {
+      @include image-dimensions(217px, 227px, contain);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 11;
+    }
+  }
+  .info__comment {
+    position: relative;
+    padding: 21px 37px 24px 59px;
+    border-radius: 3px;
+    background: #EDF3F6;
+    p {
+      @include font($fontSize:14px, $fontW:400,) ;
+    }
+    svg {
+      position: absolute;
+      top: 23px;
+      left: 25px;
+    }
+  }
+  .swiper-button-next::after {
+    border: 3px solid #3C93F0;
+    font-size: 20px;
+    border-radius: 100%;
+    padding: 5px 10px;
+  }
+  .swiper-button-prev::after{
+    border: 3px solid #3C93F0;
+    font-size: 20px;
+    font-weight: 900;
+    border-radius: 100%;
+    padding: 5px 10px;
+  }
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+    width: 30px;
+    height: 5px;
+    border-radius: 0;
+  }
+  .master__menu {
+    display: none;
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      right: -11px;
+      @include iframe(142px,98px);
+      z-index: -11;
+      
+    }
+    .master__font{
+      @include flex($justify: start,$isGap:true,$gap:9px,);
+      margin-top: 11px;
+      p {
+        @include font($fontSize:10px, $fontW:700,) ;
+      }
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+.client {
+  .container {
+    padding: 0;
+  }
+  .client__btn{
+    button {
+      @include btn($btnColor:#F1F5F9, $fontW:500, $peddBnt:18px 38px 16px 41px, $bg:#3C93F0, $border:1px solid #F1F5F9, $fontSize:14px,$fontF:'gilroy' );
+    }
+  }
+  .client__img {
+    @include grid(6);
+    padding: 30px 0;
+    img {
+      @include image-dimensions(100%,100%,);
+    }
+  }
+  .client__card{
+    @include flex();
+    padding: 0 0 30px;
+  }
+  .client__box {
+    @include flex($isGap:true,$gap:20px);
+  }
+  .client__rating {
+    @include border($color:#EDF3F6);
+    padding: 10px 20px 10px 28px;
+    @include flex($isGap:true,$gap:20px);
+    position: relative;
+    .flag {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      z-index: -1;
+    }
+    span {
+      @include font($color:#000,$fontSize:18px, $fontW:600,);
+    }
+  }
+  .client__text{
+    .star {
+      i{
+        color:$bgColor;
+      }
+    }
+    h6{
+      @include font($color:#878787,$fontSize:12px, $fontW:700,);
+      margin-top: 5px;
+    }
+    p {
+      @include font($color:#878787,$fontSize:12px, $fontW:400,);
+    }
+  }
+  .client__grade {
+    p {
+      @include font($color:#878787,$fontSize:12px, $fontW:400,);
+    }
+  }
+}
+
 footer {
   background: $textColor;
   padding: 33px 0 20px 0;
@@ -274,6 +860,155 @@ footer {
     }
   }
 
+  .repair {
+    .repair__info {
+      h2 {
+        @include font($fontSize:26px, $fontW:900, $fontF:'gilroy');
+      }
+      p {
+        @include font($fontSize:14px, $fontW:500, $fontF:'gilroy');
+        margin-top: 30px;
+      }
+      button {
+        @include btn ($fontW:700, $peddBnt:12px 23px 12px 23px,$fontSize:9px,);
+        margin-top: 25px;
+      }
+      .repair__svg {
+        margin-top: 25px;
+        font-size: 23px;
+        
+        p {
+          @include font ($color:#878787,$fontSize:10px, $fontW:500, $fontF:'gilroy');
+          margin-top: 0;
+        }
+      }
+    }
+    .repair__img {
+      height: 213px;
+      .repair__number {
+        top: 10px;
+        left: 20px;
+        @include font($color:#fff,$fontSize:10px, $fontW:500, $fontF:'gilroy');
+        span {
+          font-size: 28px;
+        }
+      }
+      .repair__items {
+        top: 21px;
+        padding: 7px 3px;
+        @include flex($direction: column, $justify: space-between, $align: center,$isGap:true,$gap:7px);
+        img {
+          @include image-dimensions (100%, 34px, contain)
+        }
+      }
+    }
+    .repair__text {
+      padding: 15px;
+      h3 {
+        @include font($fontSize:14px, $fontW:700, $fontF:'gilroy');
+      }
+      p {
+        @include font($fontSize:14px, $fontW:500, $fontF:'gilroy');
+      }
+      .repair__block {
+        h6{
+          @include font ($color:#3E3E3E, $fontSize:10px, $fontW:700,);
+        }
+        p {
+          @include font ($color:#3E3E3E, $fontSize:10px, $fontW:400,);
+        }
+      }
+      .repair__date {
+        margin-top: 14px;
+      }
+    }
+  }
+
+  .master {
+    .master__card {
+      padding: 40px 60px;
+      @include flex($justify: start,$isGap:true,$gap:15px);
+    }
+    .master__box {
+      padding: 16px 70px 16px 25px;
+      img {
+        @include iframe(160px,130px);
+        top: -16px;
+        right: 10px;
+      }
+      .master__text {
+        position: relative;
+        h4 {
+          @include font($fontSize:14px, $fontW:600, $fontF:'Proxima_Nova') ;
+        }
+        p{
+          @include font($fontSize:10px, $fontF:'Proxima_Nova') ;
+          margin-top: 5px;
+        }
+      }
+      .master__text::before {
+        content: '';
+        width: 4px;
+        height: 35px;
+      }
+      .master__search {
+        width: 350px;
+        input {
+          padding: 10px 0 10px 16px;
+        }
+        button {
+         @include btn($peddBnt:10px 16px 10px 16px,$fontSize:10px,);
+  
+        }
+      }
+      .master__chek {
+        margin-top: 11px;
+        input {
+          width: 7px;
+        }
+        label {
+          @include font($fontSize:10px, $fontW:400,) ;
+          opacity: 0.5;
+        }
+      }
+    }
+    .master__menu {
+      img {
+        top: -10px;
+        right: -93px;
+        @include iframe(155px,112px);
+        z-index: -11;
+        
+      }
+      .master__font{
+        margin-bottom: 18px;
+        p {
+          @include font($fontSize:10px, $fontW:700,) ;
+        }
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  .info {
+    padding: 40px 20px 40px 20px;
+    .info__text {
+      img {
+        @include image-dimensions(160px, 190px, contain);
+      }
+    }
+  }
+
+  .client {
+    .client__img {
+      @include grid(5);
+      gap: 15px;
+    }
+  }
+
 }
 /* ==============1024=================== */
 
@@ -356,6 +1091,301 @@ footer {
     }
   }
 
+  .price {
+    .price__order{
+      .price__number{
+          font-size: 14px !important;
+          white-space: nowrap;
+      }
+    }
+    .price__box {
+      .price__text{
+        @include flex(column,start ,start ,$isGap:true ,$gap:5px );
+        h3{
+            font-size: 14px ;
+        }
+        .price__info{
+            font-weight: 700 ;
+        }
+      }
+    }
+    .price__items {
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .price__block{
+      padding: 14px 12px 13px 17px !important;
+      p{
+        @include font ($fontSize:14px !important);
+    }
+    a{
+        @include font ($fontSize:14px !important);
+    }
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+    }
+  }
+
+  .slider{
+    .slider__card{
+        .slider__cost{
+          span{
+            font-size: 14px !important;
+          }
+          p{
+            font-size: 10px !important;
+          }
+        }
+      .slide__info{
+        p{
+          font-size: 10px !important;
+        }
+        span{
+          font-size: 14px !important;
+        }
+      }
+      .slider__ava{
+        img{
+          width: 35px;
+          height: 35px;
+        }
+        div{
+          p{
+            @include font(#878787,10px);
+          }
+          h4{
+            font-size: 14px;
+          }
+        }
+      }
+      .slider__logo{
+        padding: 12px 11px !important;
+        svg {
+          width: 25px;
+          height: 25px;
+        }
+
+      }
+    }
+  }
+
+  .brand {
+    padding: 50px 0;
+    .brand__card {
+      @include grid (5);
+      img {
+        @include image-dimensions (90%, 90%, contain);
+      }
+      
+    }
+  }
+
+  .repair {
+    .repair__text {
+      .repair__block {
+        h6{
+          @include font ($color:#3E3E3E, $fontSize:10px, $fontW:700,);
+        }
+        p {
+          @include font ($color:#3E3E3E, $fontSize:10px, $fontW:400,);
+        }
+      }
+      .repair__date {
+        margin-top: 14px;
+      }
+    }
+  }
+
+  .about {
+    .about__wrapper {
+      .about__box {
+        margin-bottom: 11px;
+        h5 {
+          @include font($fontSize:10px, $fontW:700, $fontF:'gilroy');
+        }
+        p {
+          @include font($fontSize:10px, $fontW:500, $fontF:'gilroy');
+        }
+      }
+      .about__second {
+        padding-right: 40px;
+        h3 {
+          @include font($fontSize:14px, $fontW:700, $fontF:'gilroy');
+          width: 226.133px;
+        }
+        p {
+          @include font($fontSize:10px, $fontW:500, $fontF:'gilroy');
+          width: 226.133px;
+        }
+      }
+    }
+  }
+
+  .master {
+    .master__card {
+      padding: 40px 45px;
+      @include flex($justify: start,$isGap:true,$gap:30px);
+    }
+    .master__box {
+      padding: 16px 60px 16px 25px;
+      img {
+        @include iframe(130px,106px);
+        top: -16px;
+        right: 10px;
+      }
+      .master__text {
+        position: relative;
+        h4 {
+          @include font($fontSize:10px, $fontW:600, $fontF:'Proxima_Nova') ;
+        }
+        p{
+          @include font($fontSize:8px, $fontF:'Proxima_Nova') ;
+          margin-top: 5px;
+        }
+      }
+      .master__text::before {
+        content: '';
+        width: 4px;
+        height: 29px;
+      }
+      .master__search {
+        @include flex($justify: start, $align: center,$isGap:false,$gap:20px);
+        width: 287px;
+        input {
+          padding: 6px 0 6px 16px;
+          font-size: 10px;
+        }
+        button {
+         @include btn($peddBnt:8px 16px 8px 16px,$fontSize:10px,);
+  
+        }
+      }
+      .master__chek {
+        margin-top: 11px;
+        input {
+          width: 7px;
+        }
+        label {
+          @include font($fontSize:8px, $fontW:400,) ;
+          opacity: 0.5;
+        }
+      }
+    }
+    .master__menu {
+      img {
+        top: 0;
+        right: -80px;
+        @include iframe(126px,91px);
+        z-index: -11;
+        
+      }
+      .master__font{
+        margin-bottom: 18px;
+        p {
+          @include font($fontSize:8px, $fontW:700,) ;
+        }
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+
+  .info {
+    padding: 0 30px ;
+
+    .info__text {
+      padding: 16px;
+      h2 {
+        @include font($fontSize:16px,) ;
+      }
+      h2::before {
+        content: '';
+        width: 80px;
+        height: 4px;
+        bottom: -10px;
+      }
+      h5 {
+        @include font($fontSize:14px) ;
+      }
+      p {
+        @include font($fontSize:10px) ;
+        width: 55%;
+      }
+      img {
+        @include image-dimensions(126px, 148px, contain);
+      }
+    }
+    .info__comment {
+      padding: 16px 16px 16px 40px;
+      p {
+        @include font($fontSize:10px) ;
+      }
+      svg {
+        width: 14px;
+        height: 10px;
+        top: 15px;
+        left: 16px;
+      }
+    }
+  }
+
+  .client {
+    .client__img {
+      @include grid(4);
+      gap: 20px;
+      .hidden {
+        display: none;
+      }
+    }
+    .client__btn{
+      button {
+        @include btn($peddBnt:14px 30px 13px 32px, $fontSize:10px,);
+      }
+    }
+    .client__rating {
+      padding: 4px 16px 8px 21px;
+      .flag {
+        top: 0;
+        left: 13px;
+        width: 31.807px;
+        height: 47.71px;
+      }
+      span {
+        @include font($fontSize:14px,);
+      }
+    }
+    .client__text{
+      .star {
+        display: flex;
+
+        i{
+          color:$bgColor;
+          font-size: 12px;
+        }
+      }
+      h6{
+        @include font($color:#878787,$fontSize:9px, $fontW:700,);
+        margin-top: 0;
+      }
+      p {
+        @include font($color:#878787,$fontSize:9px, $fontW:400,);
+      }
+    }
+    .client__grade {
+      p {
+        @include font($color:#878787,$fontSize:9px, $fontW:400,);
+      }
+      svg {
+        width: 63.613px;
+        height: 18.289px;
+      }
+    }
+  }
+
 }
 
 /* ==============768=================== */
@@ -421,6 +1451,158 @@ footer {
     }
     .banner__btn{
         display: block !important;
+    }
+  }
+
+  .price {
+    .price__order{
+      a{
+          display: none !important;
+      }
+  }
+  .price__box {
+    .price__info{
+      font-size: 10px !important;
+      font-weight: 400 !important;
+      }
+    }
+    .price__button{
+      padding: 12px 0;
+      .price__btn{
+          @include font(#fff,10px,600);
+          padding: 10px 20px;
+        }
+      }
+      .price__block{
+        padding: 14px 12px 13px 17px !important;
+        p{
+          @include font ($fontSize:8px !important);
+      }
+      a{
+          @include font ($fontSize:8px !important);
+      }
+    }
+  }
+
+  .repair {
+    .repair__info {
+      h2 {
+        @include font($fontSize:20px, $fontW:900, $fontF:'gilroy');
+      }
+      p {
+        @include font($fontSize:10px, $fontW:500, $fontF:'gilroy');
+        margin-top: 10px;
+      }
+      button {
+        @include btn ($fontW:700, $peddBnt:9px 17px 8px 17px,$fontSize:6px,);
+        margin-top: 20px;
+      }
+      .repair__svg {
+        margin-top: 15px;
+        gap: 10px;
+        svg {
+          width: 21px;
+          height: 21px;
+        }
+        
+        p {
+          @include font ($color:#878787,$fontSize:8px, $fontW:500, $fontF:'gilroy');
+        }
+      }
+    }
+    .repair__img {
+      height: 160px;
+      .repair__number {
+        top: 5px;
+        left: 10px;
+        @include font($color:#fff,$fontSize:8px, $fontW:500, $fontF:'gilroy');
+        span {
+          font-size: 10px;
+        }
+      }
+      .repair__items {
+        top: 15px;
+        padding: 5px 2px;
+        @include flex($direction: column, $justify: space-between, $align: center,$isGap:true,$gap:5px);
+        img {
+          @include image-dimensions (100%, 24px, contain)
+        }
+      }
+    }
+    .repair__text {
+      padding: 15px;
+      h3 {
+        @include font($fontSize:10px, $fontW:700, $fontF:'gilroy');
+      }
+      p {
+        @include font($fontSize:10px, $fontW:500, $fontF:'gilroy');
+      }
+      .repair__block {
+        h6{
+          @include font ($color:#3E3E3E, $fontSize:8px, $fontW:700,);
+        }
+        p {
+          @include font ($color:#3E3E3E, $fontSize:7px, $fontW:400,);
+        }
+      }
+      .repair__date {
+        margin-top: 14px;
+      }
+    }
+  }
+
+  .about {
+    .about__wrapper {
+      @include grid(1) ;
+      .about__cards {
+        grid-column: 1/1;
+      }
+      .about__box {
+        margin-bottom: 20px;
+        h5 {
+          @include font($fontSize:14px, $fontW:700, $fontF:'gilroy');
+        }
+        p {
+          @include font($fontSize:14px, $fontW:500, $fontF:'gilroy');
+        }
+      }
+      .about__second {
+        display: none;
+      }
+      .about__secondmobile {
+        @include flex ($direction: column, $justify: center, $align: center,$isGap:true,$gap:30px);
+      }
+
+    }
+  }
+
+  .master {
+    .master__card {
+      padding: 40px 0;
+      @include flex($direction: column,);
+    }
+    .master__box{
+      img {
+        display: none;
+      }
+    }
+  }
+
+  .info {
+    padding: 0 20px;
+    .info__wrapper {
+      padding: 15px 0 40px;
+    }
+    
+  }
+
+  .client {
+    .client__img {
+      @include grid(3);
+      gap: 9px;
+    }
+    .client__box {
+      @include flex($direction: column,$isGap:true,$gap:20px);
     }
   }
 
@@ -496,6 +1678,125 @@ footer {
       margin-left: 10px;
     }
   }
+
+  .price {
+    .price__items {
+      grid-template-columns: repeat(1,1fr);
+      gap: 0;
+      border: 1px dashed #3C93F0;
+      border-radius: 3px;
+    }
+    .price__block {
+      border: none !important;
+    }
+  }
+
+  .slider {
+    .slider__card{
+      padding: 15px !important;
+    }
+  }
+
+  .repair {
+    padding-bottom: 30px;
+    .repair__card {
+      padding-top: 20px;
+      display: flex;
+      align-items:center;
+      flex-direction: column-reverse;
+    }
+    .repair__info {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      h2 {
+        @include font($fontSize:18px, $fontW:900, $fontF:'gilroy');
+        text-align: center;
+      }
+      p {
+        @include font($fontSize:14px, $fontW:500, $fontF:'gilroy');
+        text-align: center;
+      }
+      button {
+        @include btn ($fontW:700, $peddBnt:16px 23px 16px 23px,$fontSize:14px,);
+      }
+      .repair__svg {
+       display: none;
+      }
+    }
+    .repair__img {
+      height: 240px;
+      .repair__number {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        @include font($color:#fff,$fontSize:12px, $fontW:500, $fontF:'gilroy');
+        span {
+          font-size: 28px;
+        }
+      }
+      .repair__items {
+        top: 40px;
+        right: 10px;
+        background: #fff;
+        padding: 10px 5px;
+        border-radius: 3px;
+        @include flex($direction: column, $justify: space-between, $align: center,$isGap:true,$gap:6px);
+        img {
+          @include image-dimensions (100%, 32px, contain)
+        }
+      }
+    }
+    .repair__text {
+      padding: 10px 0 0 0 ;
+      h3 {
+        @include font($fontSize:18px, $fontW:700, $fontF:'gilroy');
+      }
+      p {
+        @include font($fontSize:18px, $fontW:500, $fontF:'gilroy');
+      }
+      .repair__block {
+        @include flex ($justify: start, $align: center,$isGap:true,$gap:10px);
+        h6{
+          @include font ($color:#3E3E3E, $fontSize:14px, $fontW:700,);
+        }
+        p {
+          @include font ($color:#3E3E3E, $fontSize:14px, $fontW:400,);
+        }
+      }
+      .repair__date {
+        margin-top: 20px;
+        @include flex($justify: start, $align: center,$isGap:true,$gap:20px);
+      }
+    }
+    .repair__box_mobile {
+      display: none;
+    }
+    .repair__mobile{
+      margin-top: 17px;
+      display: flex;
+      align-items:center;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+
+  .info {
+    padding: 0 20px;
+    .info__wrapper {
+      padding: 15px 0 40px;
+    }
+    .swiper {
+      padding: 0 0;
+    }
+    .swiper-button-next {
+      display: none;
+    }
+    .swiper-button-prev {
+      display: none;
+    }
+  }
+  
 }
 
 /* ==============450=================== */
@@ -524,6 +1825,271 @@ footer {
           @include btn(#fff,600,15px 19px 15px 19px,#09D743,none,16px);
       }
   }
+  }
+
+  .price {
+    .price__order{
+      .price__info{
+        font-size: 8px !important;
+    }
+  }
+  .price__box {
+    padding: 9px 10px 9px 10px;
+    .price__info{
+      font-size: 8px !important;
+      }
+    }
+  }
+
+  .slider {
+    .slider__content{
+      padding: 0 !important;
+    }
+  }
+
+  .brand {
+    padding: 30px 0;
+    .brand__card {
+      @include grid (3);
+    }
+    .brand__hidden {
+      display: none;
+    }
+    .brand__btn {
+      @include flex ($justify: center);
+    }
+  }
+  .repair {
+    .repair__info {
+      h2 {
+        @include font($fontSize:16px, $fontW:900, $fontF:'gilroy');
+      }
+      p {
+        @include font($fontSize:12px, $fontW:500, $fontF:'gilroy');
+      }
+      button {
+        @include btn ($fontW:700, $peddBnt:7px 17px 7px 17px,$fontSize:10px,);
+      }
+    }
+
+    .repair__text {
+      h3 {
+        @include font($fontSize:12px, $fontW:700, $fontF:'gilroy');
+      }
+      p {
+        @include font($fontSize:12px, $fontW:500, $fontF:'gilroy');
+      }
+      .repair__block {
+        h6{
+          @include font ($color:#3E3E3E, $fontSize:10px, $fontW:700,);
+        }
+        p {
+          @include font ($color:#3E3E3E, $fontSize:10px, $fontW:400,);
+        }
+      }
+      .repair__date {
+        margin-top: 20px;
+        @include flex($justify: start, $align: center,$isGap:true,$gap:20px);
+      }
+    }
+    .repair__box_mobile {
+      display: none;
+    }
+    .repair__mobile{
+      margin-top: 17px;
+      display: flex;
+      align-items:center;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+
+  .about {
+    .about__wrapper {
+      .about__secondmobile {
+        img {
+          width: 269px;
+          height: 235px;
+        }
+      }
+    }
+  }
+
+  .master {
+    .master__card {
+      gap: 0;
+      align-items: stretch;
+    }
+    .title__first {
+      display: none;
+    }
+    .title__second{
+      display: flex;
+    }
+    .title__thirt {
+      display: flex;
+    }
+    .master__box {
+      padding: 16px 125px 16px 25px;
+      img {
+        display: block;
+        @include iframe(110px,92px);
+        top: -16px;
+        right: 12px;
+
+      }
+      .master__text {
+        h4 {
+          display: none;
+        }
+        .master__display {
+          display: block;
+          font-size: 12px;
+        }
+        p{
+          line-height: 14px;
+        }
+      }
+      .master__text::before {
+        content: '';
+        width: 5px;
+        height: 60px;
+        top: 0;
+        left: -13px;
+      }
+      .master__search {
+        display: none;
+      }
+      .master__chek {
+        display: none;
+      }
+    }
+    .master__menu {
+      display: none;
+    }
+    .master__map {
+      position: relative;
+      display: block;
+      .master__mapImage {
+        @include image-dimensions(100%, 100%, contain);
+      }
+      .master__gorl {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @include image-dimensions(137px, 166px, contain);
+      }
+      .master__svgSecond {
+        position: absolute;
+        bottom: 53%;
+        right: 48%;
+      }
+      .master__svgFirst {
+        position: absolute;
+        top: 14%;
+        right: 39%;
+      }
+      .master__svgThird {
+        position: absolute;
+        top: 28%;
+        left: 34%;
+      }
+      .master__svgFourth {
+        position: absolute;
+        top: 31%;
+        left: 66%;
+      }
+      .master__svgFifth {
+        position: absolute;
+        top: 60%;
+        right: 63%;
+      }
+    }
+    .master__finder {
+      display: block;
+      border-radius: 0px 0px 3px 3px;
+      background: #EDF3F6;
+      @include flex($justify: start, $align: center,$isGap:false,$gap:20px);
+      padding: 10px 16px;
+      input {
+        padding: 12px 0 12px 18px;
+        outline: none;
+        border: none;
+        width: 280px;
+      }
+      button {
+       @include btn($peddBnt:12px 20px 12px 20px,$fontSize:14px,);
+
+      }
+    }
+  }
+
+  .info {
+    .info__wrapper {
+      padding: 10px 0 40px;
+    }
+    .master__menu {
+      display: block;
+      .master__font{
+        margin-bottom: 18px;
+      }
+    }
+  }
+
+  .client {
+    .client__img {
+      @include grid(2);
+      gap: 5px;
+    }
+    .client__card{
+      padding: 0 0 20px;
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
+    .client__box{
+      flex-direction: row-reverse;
+      gap: 10px;
+    }
+    .client__btn{
+      button {
+        @include btn($peddBnt:12px 20px 12px 20px, $fontSize:10px,);
+      }
+    }
+    .client__rating {
+      padding: 2px 9px 10px 8px;
+      gap: 15px;
+      .flag {
+        left: 4px;
+        width: 22px;
+        height: 33px;
+      }
+      span {
+        @include font($fontSize:10px,);
+      }
+    }
+    .client__text{
+      .star {
+        i{
+          font-size: 8px;
+        }
+      }
+      h6{
+        @include font($color:#878787,$fontSize:6px, $fontW:700,);
+        margin-top: 3px;
+      }
+      p {
+        @include font($color:#878787,$fontSize:6px, $fontW:400,);
+      }
+    }
+    .client__grade {
+      p {
+        @include font($color:#878787,$fontSize:6px, $fontW:400,);
+      }
+      svg {
+        width: 42px;
+        height: 14px;
+      }
+    }
   }
 
   footer {
