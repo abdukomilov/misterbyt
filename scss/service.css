@@ -1300,6 +1300,198 @@ nav .nav__tel a span {
   font-family: "Proxima_Nova";
 }
 
+.questions .questions__cards {
+  padding-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto, 1fr);
+  grid-gap: 20px;
+  gap: 0;
+}
+.questions .questions__cards .questions__select {
+  grid-column: 1/3;
+}
+.questions .questions__cards .questions__select .questions__box {
+  border-radius: 3px;
+  padding: 30px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.questions .questions__cards .questions__select .questions__box p {
+  color: #3E3E3E;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: "Proxima_Nova";
+}
+.questions .questions__cards .questions__select .questions__box:hover {
+  background: #CDE1EE;
+}
+.questions .questions__info img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pay {
+  padding: 30px 0 70px 0;
+}
+.pay .pay__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto, 1fr);
+  grid-gap: 20px;
+}
+.pay .pay__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10px;
+  background: #EDF3F6;
+  grid-column: 1/2;
+  padding: 28px;
+}
+.pay .pay__info h4 {
+  color: #3E3E3E;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: "Proxima_Nova";
+}
+.pay .pay__card {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+.pay .pay__card .pay__cash {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border-radius: 3px;
+  padding: 8px 14px 8px 10px;
+}
+.pay .pay__card .pay__cash p {
+  color: #3E3E3E;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: "Proxima_Nova";
+}
+.pay .pay__cridit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border-radius: 3px;
+  padding: 8px 14px 8px 10px;
+}
+.pay .pay__cridit p {
+  color: #3E3E3E;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: "Proxima_Nova";
+}
+.pay .pay__online {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+.pay .pay__online .pay__visa {
+  padding: 12px 8px 12px 8px;
+  background: #fff;
+  border-radius: 3px;
+}
+.pay .pay__online .pay__mastercard {
+  padding: 5px 12px 6px 12px;
+  background: #fff;
+  border-radius: 3px;
+}
+.pay .pay__question {
+  grid-column: 2/4;
+  border-radius: 3px;
+  background: #FED036;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+.pay .pay__question .pay__form {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 0 0 0 20px;
+}
+.pay .pay__question .pay__form input[type=number] {
+  outline: none;
+  border: 0;
+  padding: 11px 0;
+}
+.pay .pay__question .pay__form input[type=submit] {
+  outline: none;
+  border: 0;
+  background-color: #3C93F0;
+  padding: 11px 18px 11px 17px;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: "gilroy";
+}
+.pay .pay__question .pay__form .pay__flag {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+}
+.pay .pay__question .pay__name {
+  width: 35%;
+}
+.pay .pay__question .pay__name input {
+  width: 100%;
+  padding: 11px 0 11px 20px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+}
+.pay .pay__question h3 {
+  color: #3E3E3E;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: "gilroy";
+}
+.pay .pay__question p {
+  color: #3E3E3E;
+  font-weight: 300;
+  font-size: 12px;
+  font-family: "gilroy";
+}
+.pay .pay__question p span {
+  color: #3C93F0;
+  text-decoration: underline;
+}
+.pay .pay__box {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+
 footer {
   background: #3E3E3E;
   padding: 33px 0 20px 0;
@@ -2019,6 +2211,46 @@ footer .footet__topBtn a {
     width: 63.613px;
     height: 18.289px;
   }
+  .pay {
+    padding: 30px 0 70px 0;
+  }
+  .pay .pay__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    grid-gap: 20px;
+  }
+  .pay .pay__info {
+    display: none;
+  }
+  .pay .pay__question {
+    grid-column: 1/1;
+    gap: 15px;
+  }
+  .pay .pay__question h3 {
+    color: #3E3E3E;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: "gilroy";
+  }
+  .pay .pay__question p {
+    color: #3E3E3E;
+    font-weight: 300;
+    font-size: 12px;
+    font-family: "gilroy";
+  }
+  .pay .pay__question p span {
+    color: #3C93F0;
+    list-style: underline;
+  }
+  .pay .pay__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
 }
 /* ==============768=================== */
 @media only screen and (max-width: 768px) {
@@ -2263,6 +2495,18 @@ footer .footet__topBtn a {
     align-items: center;
     gap: 20px;
   }
+  .questions .questions__cards {
+    padding-top: 20px;
+  }
+  .questions .questions__cards .questions__select .questions__box {
+    padding: 20px 20px;
+  }
+  .questions .questions__cards .questions__select .questions__box p {
+    color: #3E3E3E;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: "Proxima_Nova";
+  }
   footer .footer__tel a {
     color: #fff;
     font-weight: 900;
@@ -2499,6 +2743,47 @@ footer .footet__topBtn a {
   }
   .info .swiper-button-prev {
     display: none;
+  }
+  .questions .questions__cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    grid-gap: 20px;
+  }
+  .questions .questions__cards .questions__select {
+    grid-column: 1/1;
+  }
+  .pay {
+    padding: 10px 0 40px 0;
+  }
+  .pay .pay__question {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+  }
+  .pay .pay__question .pay__form {
+    display: none;
+  }
+  .pay .pay__question .pay__name {
+    width: 100%;
+  }
+  .pay .pay__question h3 {
+    display: none;
+  }
+  .pay .pay__question p {
+    color: #3E3E3E;
+    font-weight: 300;
+    font-size: 10px;
+    font-family: "gilroy";
+  }
+  .pay .pay__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
   }
 }
 /* ==============450=================== */
@@ -2829,6 +3114,12 @@ footer .footet__topBtn a {
   .client .client__grade svg {
     width: 42px;
     height: 14px;
+  }
+  .questions .questions__cards .questions__select .questions__box p {
+    color: #3E3E3E;
+    font-weight: 700;
+    font-size: 12px;
+    font-family: "Proxima_Nova";
   }
   footer .footer__tel a {
     color: #fff;
