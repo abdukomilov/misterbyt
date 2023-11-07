@@ -1,0 +1,204 @@
+@import "fonts";
+@import url('/misterbyt/css/conts.css');
+@import "mixins";
+@import "variables";
+@import "service";
+
+.bosch {
+  .bosch__wrapper {
+    @include grid(2);
+    align-items:center;
+  }
+  .bosch__card {
+    position: relative;
+    .bosch__zek {
+      width: 386px;
+      height: 450px;
+      z-index: 1;
+    }
+    .bosch__diplom {
+      position: absolute;
+      right: 40px;
+      top: 90px;
+      z-index: -1;
+      width: 193px;
+      height: 263px;
+    }
+  }
+  .bosch__items {
+    h2 {
+      @include font ($color:#3E3E3E, $fontSize:38px, $fontW:900, $fontF:'gilroy');
+    }
+    .bosch__text {
+      @include font ($color:#3E3E3E, $fontSize:20px, $fontW:400,);
+      margin-top: 30px;
+    }
+    .bosch__name {
+      margin-top: 40px;
+      h6 {
+        @include font ($color:#3E3E3E, $fontSize:20px, $fontW:700,);
+      }
+      p {
+        @include font ($color:#C4C4C4, $fontSize:18px, $fontW:400,);
+      }
+    }
+  }
+  .bosch__info {
+    @include grid(4);
+    margin-top: 30px;
+  }
+  .bosch__box {
+    padding: 15px 14px;
+    background: #EDF3F6;
+    border-top: 4px solid #FED036;
+    border-radius: 3px;
+    h5 {
+      @include font ($color:#3E3E3E, $fontSize:28px, $fontW:700,);
+      span {
+        @include font ($color:#3E3E3E, $fontSize:14px, $fontW:700,);
+      }
+    }
+    p {
+      @include font ($color:#3E3E3E, $fontSize:10px, $fontW:400,);
+    }
+  }
+}
+
+
+// media
+
+
+
+/* ==============1280=================== */
+
+@media only screen and (max-width: 1280px) {
+
+}
+/* ==============1024=================== */
+
+@media only screen and (max-width: 1024px) {
+  .bosch {
+    .bosch__wrapper {
+      @include grid(2);
+    }
+    .bosch__card {
+      .bosch__zek {
+        width: 295px;
+        height: 343px;
+      }
+      .bosch__diplom {
+        right: 40px;
+        top: 51px;
+        width: 143px;
+        height: 198px;
+      }
+    }
+    .bosch__items {
+      padding-top: 20px;
+      h2 {
+        @include font ($color:#3E3E3E, $fontSize:28px, $fontW:900, $fontF:'gilroy');
+      }
+      .bosch__text {
+        @include font ($color:#3E3E3E, $fontSize:16px, $fontW:400,);
+        margin-top: 30px;
+      }
+      .bosch__name {
+        margin-top: 20px;
+        h6 {
+          @include font ($color:#3E3E3E, $fontSize:16px, $fontW:700,);
+        }
+        p {
+          @include font ($color:#C4C4C4, $fontSize:12px, $fontW:400,);
+        }
+      }
+    }
+  }
+}
+
+/* ==============768=================== */
+
+@media only screen and (max-width: 768px) {
+  .bosch {
+    .bosch__wrapper {
+      @include grid(2);
+    }
+    .bosch__card {
+      .bosch__zek {
+        width: 257px;
+        height: 300px;
+      }
+      .bosch__diplom {
+        right: 15px;
+        top: 47px;
+        width: 126px;
+        height: 174px;
+      }
+    }
+    .bosch__items {
+      padding-top: 20px;
+      h2 {
+        @include font ($color:#3E3E3E, $fontSize:22px, $fontW:900, $fontF:'gilroy');
+      }
+      .bosch__text {
+        @include font ($color:#3E3E3E, $fontSize:14px, $fontW:400,);
+        margin-top: 30px;
+      }
+      .bosch__name {
+        margin-top: 20px;
+        h6 {
+          @include font ($color:#3E3E3E, $fontSize:14px, $fontW:700,);
+        }
+        p {
+          @include font ($color:#C4C4C4, $fontSize:10px, $fontW:400,);
+        }
+      }
+    }
+    .bosch__box {
+      h5 {
+        @include font ($color:#3E3E3E, $fontSize:24px, $fontW:700,);
+        span {
+          @include font ($color:#3E3E3E, $fontSize:12px, $fontW:700,);
+        }
+      }
+      p {
+        @include font ($color:#3E3E3E, $fontSize:10px, $fontW:400,);
+      }
+    }
+  }
+}
+
+/* ==============640=================== */
+
+@media only screen and (max-width: 640px) {
+  .bosch {
+    .bosch__wrapper {
+      @include flex($direction: column-reverse, $align: center,$isGap:true,$gap:20px);
+    }
+    .bosch__card {
+      .bosch__diplom {
+        right: -25px;
+        top: 47px;
+        width: 130px;
+        height: 173px;
+      }
+    }
+    .bosch__info {
+      @include grid(2);
+      margin-top: 20px;
+    }
+  }
+}
+
+/* ==============450=================== */
+
+@media only screen and (max-width: 450px) {
+  .bosch {
+    .bosch__info {
+      @include grid(1);
+      margin-top: 20px;
+    }
+    .bosch__box_hidden {
+      display: none;
+    }
+  }
+}

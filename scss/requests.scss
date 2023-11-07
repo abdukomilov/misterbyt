@@ -1,0 +1,184 @@
+@import "fonts";
+@import url('/misterbyt/css/conts.css');
+@import "mixins";
+@import "variables";
+@import "service";
+
+.location {
+  .location__wrapper {
+    @include grid(3);
+  }
+  .location__addres {
+    grid-column: 1/2;
+    h6 {
+      @include font($fontSize:18px, $fontW:600,);
+      margin-top: 18px;
+      margin-bottom: 10px;
+    }
+  }
+  .location__items {
+    border: 2px solid #F6F6F6;
+    border-radius: 3px;
+  }
+  .location__subtutle {
+    @include flex( $justify: start, $align: center,$isGap:true,$gap:10px);
+    padding: 20px;
+    background: #FED036;
+    border-radius: 2px;
+    h3 {
+      @include font($fontSize:20px, $fontW:700,);
+    }
+  }
+
+  .location__box {
+    padding: 20px 0 18px 30px;
+    h4 {
+      @include font($fontSize:14px, $fontW:700,);
+      @include flex( $justify: start, $align: center,$isGap:true,$gap:10px);
+    }
+    p {
+      @include font($fontSize:14px, $fontW:400,);
+    }
+  }
+  .location__map {
+    grid-column: 2/4;
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .location__master {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #F6F6F6;
+    border-radius: 3px;
+    @include flex( $justify: start, $align: center,$isGap:true,$gap:10px);
+    img {
+      height: 54px;
+    }
+    h2 {
+      @include font($fontSize:18px, $fontW:700,);
+    }
+    p{
+      @include font($fontSize:12px, $fontW:400,);
+    }
+  }
+  .location__cards{
+    display: none;
+  }
+  .location__cards_mobile {
+    display: none;
+  }
+}
+
+// media
+
+
+
+/* ==============1280=================== */
+
+@media only screen and (max-width: 1280px) {
+
+}
+/* ==============1024=================== */
+
+@media only screen and (max-width: 1024px) {
+  .location {
+    .location__addres {
+      h6 {
+        @include font($fontSize:12px, $fontW:600,);
+        margin-top: 10px;
+      }
+    }
+    .location__subtutle {
+      h3 {
+        @include font($fontSize:12px, $fontW:700,);
+      }
+    }
+  
+    .location__box {
+      padding: 20px 0 18px 30px;
+      h4 {
+        @include font($fontSize:10px, $fontW:700,);
+      }
+      p {
+        @include font($fontSize:10px, $fontW:400,);
+      }
+    }
+    .location__master {
+      img {
+        height: 35px;
+      }
+      h2 {
+        @include font($fontSize:10px, $fontW:700,);
+      }
+      p{
+        @include font($fontSize:8px, $fontW:400,);
+      }
+    }
+  }
+}
+
+/* ==============768=================== */
+
+@media only screen and (max-width: 768px) {
+
+}
+
+/* ==============640=================== */
+
+@media only screen and (max-width: 640px) {
+  .location {
+    .location__wrapper {
+      @include flex($direction: column, $align:normal,$isGap:true,$gap:20px);
+    }
+    .location__addres {
+      h6 {
+        @include font($fontSize:12px, $fontW:600,);
+        margin-top: 10px;
+      }
+    }
+    .location__subtutle {
+      h3 {
+        @include font($fontSize:12px, $fontW:700,);
+      }
+    }
+  
+    .location__box {
+      padding: 20px 0 18px 30px;
+      h4 {
+        @include font($fontSize:10px, $fontW:700,);
+      }
+      p {
+        @include font($fontSize:10px, $fontW:400,);
+      }
+    }
+    .location__map {
+      iframe {
+        width: 100%;
+        height: 432px;
+      }
+    }
+    .location__master {
+      @include flex( $justify: start, $align: center,$isGap:true,$gap:10px);
+      img {
+        height: 54px;
+      }
+      h2 {
+        @include font($fontSize:18px, $fontW:700,);
+      }
+      p{
+        @include font($fontSize:12px, $fontW:400,);
+      }
+    }
+    .location__cards_mobile {
+      @include flex( $direction: column,$align: normal,$isGap:true,$gap:10px);
+    }
+  }
+}
+
+/* ==============450=================== */
+
+@media only screen and (max-width: 450px) {
+
+}
